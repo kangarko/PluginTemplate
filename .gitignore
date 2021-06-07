@@ -47,10 +47,6 @@ local.properties
 # PDT-specific
 .buildpath
 
-# Builder
-builder.xml
-build.xml
-
 #############
 ## Windows detritus
 #############
