@@ -32,7 +32,8 @@
 			 with previous Java version. We recommend you stick with 1.8. -->
 		<java.version>1.8</java.version>
 		
-		<!-- Change foundation.version -->
+		<!-- Change foundation.version to the latest one from
+		     https://github.com/kangarko/Foundation/releases -->
 		<foundation.version>5.8.6</foundation.version>
 		
 		<!-- DO NOT EDIT -->
@@ -48,6 +49,24 @@
 	</repositories>
 
 	<dependencies>
+		
+		<!-- (Optional) Access the server jar for NMS (groupId, artifactId and version do not matter and you 
+		     can only use it for your own organization purposes)
+		    
+		     Make sure the server is on the top because the IDE will prioritize its methods
+			 over the latest Spigot API from Foundation in case you're developing for another MC version 
+			 
+			 NB: Edit the <systemPath> to point out to your patched server file on your disk. -->
+			 
+		<!--<dependency>
+			<groupId>paper-server</groupId>
+			<artifactId>Paper</artifactId>
+			<version>1.8.8</version>
+			<scope>system</scope>
+			<systemPath>/Users/kangarko/Test Servers/1.8.8/cache/patched.jar</systemPath>
+		</dependency>-->
+		
+		<!-- Use our Foundation library -->
 		<dependency>
 		
 			<!-- IF you have Foundation on your disk, change groupId to org.mineacademy,
