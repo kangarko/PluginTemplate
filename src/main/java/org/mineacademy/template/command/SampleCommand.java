@@ -6,7 +6,7 @@ import org.mineacademy.fo.command.SimpleCommand;
 import org.mineacademy.template.model.Permissions;
 
 /**
- * A sample standalone command. 
+ * A sample standalone command.
  */
 public final class SampleCommand extends SimpleCommand {
 

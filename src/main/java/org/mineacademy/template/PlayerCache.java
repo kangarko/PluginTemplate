@@ -54,7 +54,7 @@ public final class PlayerCache extends YamlSectionConfig {
 
 	/**
 	 * Automatically called when loading data from disk.
-	 * 
+	 *
 	 * @see org.mineacademy.fo.settings.YamlConfig#onLoadFinish()
 	 */
 	@Override
