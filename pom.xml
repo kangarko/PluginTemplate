@@ -13,7 +13,7 @@
 	<name>PluginTemplate</name>
 	
 	<!-- Change version to the appropriate plugin's versions. -->
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	
 	<!-- DO NOT EDIT -->
 	<packaging>jar</packaging>
