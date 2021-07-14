@@ -12,7 +12,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 /**
- * Holds all /chc main commands
+ * A sample command group. A command group is a collection of commands,
+ * such as for the Boss plugin, the command group is /boss, where
+ * subcommands can be "spawn", "remove" etc. Example:
+ *
+ * /boss spawn
+ * /boss remove
+ * (etc..)
+ *
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class SampleCommandGroup extends SimpleCommandGroup {
