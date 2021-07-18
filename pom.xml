@@ -13,7 +13,7 @@
 	<name>PluginTemplate</name>
 	
 	<!-- Change version to the appropriate plugin's versions. -->
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	
 	<!-- DO NOT EDIT -->
 	<packaging>jar</packaging>
@@ -34,7 +34,7 @@
 		
 		<!-- Change foundation.version to the latest one from
 		     https://github.com/kangarko/Foundation/releases -->
-		<foundation.version>5.9.1</foundation.version>
+		<foundation.version>5.9.4</foundation.version>
 		
 		<!-- DO NOT EDIT -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -57,7 +57,7 @@
 			 over the latest Spigot API from Foundation in case you're developing for another MC version 
 			 
 			 NB: Edit the <systemPath> to point out to your patched server file on your disk. -->
-			 
+
 		<!--<dependency>
 			<groupId>paper-server</groupId>
 			<artifactId>Paper</artifactId>
