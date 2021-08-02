@@ -29,7 +29,11 @@
 		<!-- Change java.version to the Java version used when compiling.
 			 If you use 1.8 then your plugin will work on newer versions,
 			 but if you use "11" or "16" then it will not load on servers
-			 with previous Java version. We recommend you stick with 1.8. -->
+			 with previous Java version. We recommend you stick with 1.8. 
+			 
+			 IF YOU WANT TO CODE WITH JAVA 16 THERE ARE CHANGES YOU MUST MAKE TO THIS
+			 FILE, SEE <pluginRepositories> AND VERSION IN THE maven-shade-plugin BELOW
+			 -->	
 		<java.version>1.8</java.version>
 		
 		<!-- Change foundation.version to the latest one from
@@ -47,6 +51,14 @@
 		    <url>https://jitpack.io</url>
 		</repository>
 	</repositories>
+	
+	<!-- UNCOMMENT ONLY IF YOUR java.version IS SET TO JAVA 16 OR HIGHER -->
+	<!--<pluginRepositories>
+	    <pluginRepository>
+	        <id>maven-snapshots</id>
+	        <url>https://repository.apache.org/content/repositories/snapshots/</url>
+	    </pluginRepository>
+	</pluginRepositories>-->
 
 	<dependencies>
 		
@@ -110,7 +122,11 @@
 				<artifactId>maven-shade-plugin</artifactId>
 				
 				<!-- Change version to the latest one from 
-					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
+					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin 
+					 
+					 IF YOU USE JAVA 16 THEN PLACE 3.3.0-SNAPSHOT TO THE VERSION AND MAKE SURE TO
+					 UNCOMMENT <pluginRepositories> above
+					 -->
 				<version>3.2.4</version>
 				<executions>
 					<execution>
