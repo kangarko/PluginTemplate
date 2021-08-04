@@ -101,6 +101,7 @@ Pages:
 # -------------------------------------------------------------------------------------------------
 Player: 
   Not_Online: "&cPlayer {player} &cis not online on this server."
+  Not_Played_Before: "&cPlayer {player} &chas not played before or we could not locate his disk data."
   
 # -------------------------------------------------------------------------------------------------
 # Messages related to menus
