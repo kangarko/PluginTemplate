@@ -13,7 +13,7 @@
 	<name>PluginTemplate</name>
 	
 	<!-- Change version to the appropriate plugin's versions. -->
-	<version>1.0.3</version>
+	<version>1.0.0</version>
 	
 	<!-- DO NOT EDIT -->
 	<packaging>jar</packaging>
@@ -38,7 +38,7 @@
 		
 		<!-- Change foundation.version to the latest one from
 		     https://github.com/kangarko/Foundation/releases -->
-		<foundation.version>5.10.0</foundation.version>
+		<foundation.version>5.10.1</foundation.version>
 		
 		<!-- DO NOT EDIT -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
