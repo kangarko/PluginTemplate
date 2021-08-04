@@ -1,17 +1,11 @@
 package org.mineacademy.template;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.mineacademy.fo.Valid;
 import org.mineacademy.fo.bungee.SimpleBungee;
 import org.mineacademy.fo.command.SimpleCommandGroup;
 import org.mineacademy.fo.model.HookManager;
 import org.mineacademy.fo.model.Variables;
 import org.mineacademy.fo.plugin.SimplePlugin;
-import org.mineacademy.fo.settings.Lang;
-import org.mineacademy.fo.settings.SimpleLocalization;
-import org.mineacademy.fo.settings.YamlStaticConfig;
 import org.mineacademy.template.command.SampleCommand;
 import org.mineacademy.template.command.SampleCommandGroup;
 import org.mineacademy.template.listener.SampleListener;
@@ -20,7 +14,6 @@ import org.mineacademy.template.model.Bungee.BungeePacket;
 import org.mineacademy.template.model.Discord;
 import org.mineacademy.template.model.Packets;
 import org.mineacademy.template.model.Placeholders;
-import org.mineacademy.template.settings.Settings;
 
 import lombok.Getter;
 
@@ -52,13 +45,6 @@ public final class PluginTemplate extends SimplePlugin {
 	private final SimpleBungee bungeeCord = new SimpleBungee("plugin:tmpltplugin", Bungee.Listener.getInstance(), BungeePacket.values());
 
 	/**
-	 * Automatically load static settings classes. Settings in these classes can only be modified during startup.
-	 * If you need to save/edit data during gameplay, such as in minigames plugins, use YamlConfig instead.
-	 */
-	@Getter
-	private final List<Class<? extends YamlStaticConfig>> settings = Arrays.asList(Settings.class, SimpleLocalization.class);
-
-	/**
 	 * Automatically perform login ONCE when the plugin starts.
 	 */
 	@Override
@@ -76,9 +62,6 @@ public final class PluginTemplate extends SimplePlugin {
 
 		// Load parts of the plugin
 		Packets.load();
-
-		// Load localization
-		Lang.init();
 
 		// Uncomment to load variables
 		// Variable.loadVariables();
