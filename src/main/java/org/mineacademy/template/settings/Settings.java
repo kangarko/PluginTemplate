@@ -28,16 +28,6 @@ public final class Settings extends SimpleSettings {
 	}
 
 	/**
-	 * Attempt to save comments and symlink settings.yml
-	 *
-	 * @return
-	 */
-	@Override
-	protected boolean saveComments() {
-		return true;
-	}
-
-	/**
 	 * Place the sections where user can create new "key: value" pairs
 	 * here so that they are not removed while adding comments.
 	 *
@@ -77,6 +67,8 @@ public final class Settings extends SimpleSettings {
 
 	/*
 	 * Automatically called method when we load settings.yml to load values in this class
+	 *
+	 * See above for usage.
 	 */
 	private static void init() {
 		pathPrefix(null);

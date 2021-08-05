@@ -38,7 +38,7 @@
 		
 		<!-- Change foundation.version to the latest one from
 		     https://github.com/kangarko/Foundation/releases -->
-		<foundation.version>5.10.1</foundation.version>
+		<foundation.version>5.10.4</foundation.version>
 		
 		<!-- DO NOT EDIT -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
