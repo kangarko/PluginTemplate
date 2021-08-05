@@ -1,4 +1,4 @@
-package org.mineacademy.template.settings;
+package org.mineacademy.template.model;
 
 import org.mineacademy.fo.collection.SerializedMap;
 import org.mineacademy.fo.settings.YamlConfig;
