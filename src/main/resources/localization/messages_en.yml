@@ -55,9 +55,9 @@ Commands:
   Reload_File_Load_Error: "&4Oups, &cthere was a problem loading files from your disk! See the console for more information. {plugin_name} has not been reloaded."
   Debug_Description: "ZIP your settings for reporting bugs."
   Debug_Preparing: "&6Preparing debug log..."
-  Debug_Success: "&2Successfuly copied {amount} file(s) to debug.zip. Your sensitive MySQL information has been removed from yml files. Please upload it via uploadfiles.io and send it to us for review."
+  Debug_Success: "&2Successfuly copied {amount} file(s) to debug.zip. Your sensitive MySQL information has been removed from yml files. Please upload it via ufile.io and send it to us for review."
   Debug_Copy_Fail: "&cCopying files failed on file {file} and it was stopped. See console for more information."
-  Debug_Zip_Fail: "&cCreating a ZIP of your files failed, see console for more information. Please ZIP debug/ folder and send it to us via uploadfiles.io manually."
+  Debug_Zip_Fail: "&cCreating a ZIP of your files failed, see console for more information. Please ZIP debug/ folder and send it to us via ufile.io manually."
   Perms_Description: "List all permissions the plugin has."
   Perms_Usage: 
   Perms_Header: "Listing All Plugin Permissions"
