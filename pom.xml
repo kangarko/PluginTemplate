@@ -3,56 +3,63 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<!-- Change groupId to your own main package name -->
+	<!-- Change to your own main package name. -->
 	<groupId>org.mineacademy</groupId>
 	
-	<!-- Change artifactId to your plugin name, lower cased. Do NOT use spaces. -->
+	<!-- Change to your plugin name, must be lower cased and match your end package name. -->
 	<artifactId>plugintemplate</artifactId>
 	
-	<!-- Change name to your plugin's name. Do NOT use spaces. -->
+	<!-- Change to your plugin's name. Can contain capital letters, but do NOT use spaces. -->
 	<name>PluginTemplate</name>
 	
-	<!-- Change version to the appropriate plugin's versions. -->
+	<!-- Change to the appropriate plugin's version you have. -->
 	<version>1.0.0</version>
 	
-	<!-- DO NOT EDIT -->
+	<!-- DO NOT EDIT. -->
 	<packaging>jar</packaging>
 
 	<properties>
 		
-		<!-- Change author to your name or the main collaborator. -->
+		<!-- Change to your name or the main collaborator. -->
 		<author>kangarko</author>
 		
-		<!-- Change main.class to the full path where the class extending SimplePlugin is located -->
+		<!-- Change to the full path where your main class extending SimplePlugin is. -->
 		<main.class>org.mineacademy.template.PluginTemplate</main.class>
 		
-		<!-- Change java.version to the Java version used when compiling.
+		<!-- Change to the Java version used when compiling.
+		
+		     IMPORTANT: For Java 8, version is "1.8", for Java 11+ it is only "11" or "16".
+		
 			 If you use 1.8 then your plugin will work on newer versions,
 			 but if you use "11" or "16" then it will not load on servers
-			 with previous Java version. We recommend you stick with 1.8. 
+			 with previous Java version. We recommend you stick with 1.8.
 			 
 			 IF YOU WANT TO CODE WITH JAVA 16 THERE ARE CHANGES YOU MUST MAKE TO THIS
-			 FILE, SEE <pluginRepositories> AND VERSION IN THE maven-shade-plugin BELOW
+			 FILE, SEE <pluginRepositories> AND VERSION IN THE maven-shade-plugin BELOW.
 			 -->	
 		<java.version>1.8</java.version>
 		
-		<!-- Change foundation.version to the latest one from
-		     https://github.com/kangarko/Foundation/releases -->
+		<!-- Change to the latest one from https://github.com/kangarko/Foundation/releases 
+		     or change to "LATEST" if you downloaded Foundation to your disk. -->
 		<foundation.version>5.10.5</foundation.version>
 		
-		<!-- DO NOT EDIT -->
+		<!-- Leave on "com.github.kangarko" if you use Foundation from GitHub like most people,
+		     or change to "org.mineacademy" if you downloaded our library to your disk. -->
+		<foundation.path>com.github.kangarko</foundation.path>
+		
+		<!-- DO NOT EDIT. -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	
 	<repositories>
-		<!-- DO NOT EDIT, used to pull Foundation from the JitPack site -->
+		<!-- DO NOT EDIT, used to pull Foundation from the JitPack site. -->
 		<repository>
 		    <id>jitpack.io</id>
 		    <url>https://jitpack.io</url>
 		</repository>
 	</repositories>
 	
-	<!-- UNCOMMENT ONLY IF YOUR java.version IS SET TO JAVA 16 OR HIGHER -->
+	<!-- UNCOMMENT ONLY IF YOUR java.version IS SET TO JAVA 16 OR HIGHER. -->
 	<!--<pluginRepositories>
 	    <pluginRepository>
 	        <id>maven-snapshots</id>
@@ -63,37 +70,31 @@
 	<dependencies>
 		
 		<!-- (Optional) Access the server jar for NMS (groupId, artifactId and version do not matter and you 
-		     can only use it for your own organization purposes)
+		     can only use it for your own organization purposes, but keep version in artifactId not in version
+		     if using multiple NMS imports otherwise Maven will fail to import them correctly).
 		    
 		     Make sure the server is on the top because the IDE will prioritize its methods
-			 over the latest Spigot API from Foundation in case you're developing for another MC version 
+			 over the latest Spigot API from Foundation in case you're developing for another MC version.
 			 
 			 NB: Edit the <systemPath> to point out to your patched server file on your disk. -->
 
 		<!--<dependency>
 			<groupId>paper-server</groupId>
-			<artifactId>Paper</artifactId>
-			<version>1.8.8</version>
+			<artifactId>Paper-1.8.8</artifactId>
+			<version>1</version>
 			<scope>system</scope>
 			<systemPath>/Users/kangarko/Test Servers/1.8.8/cache/patched.jar</systemPath>
 		</dependency>-->
 		
 		<!-- Use our Foundation library -->
 		<dependency>
-		
-			<!-- IF you have Foundation on your disk, change groupId to org.mineacademy,
-			     if you pull Foundation from the Internet use com.github.kangarko  
-			     
-			     *WARNING* If you have Foundation on your disk, you also need to edit the
-			     <include>com.github.kangarko:Foundation*</include> line, see below! -->
-			<groupId>com.github.kangarko</groupId>
-			
+			<groupId>${foundation.path}</groupId>
 			<artifactId>Foundation</artifactId>
 			<version>${foundation.version}</version>
 		</dependency>
 	</dependencies>
 
-	<!-- DO NOT EDIT unless instructed to do so or you know what you're doing -->
+	<!-- DO NOT EDIT unless instructed to do so or you know what you're doing. -->
 	<build>
 		<finalName>${project.name}-${project.version}</finalName>
 		<plugins>
@@ -125,7 +126,7 @@
 					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin 
 					 
 					 IF YOU USE JAVA 16 THEN PLACE 3.3.0-SNAPSHOT TO THE VERSION AND MAKE SURE TO
-					 UNCOMMENT <pluginRepositories> above
+					 UNCOMMENT <pluginRepositories> above.
 					 -->
 				<version>3.2.4</version>
 				<executions>
@@ -140,10 +141,7 @@
 					<createDependencyReducedPom>false</createDependencyReducedPom>
 					<artifactSet>
 						<includes>
-						
-							<!-- IF you have Foundation on your disk, change include to org.mineacademy,
-							     if you pull Foundation from the Internet use com.github.kangarko  -->
-							<include>com.github.kangarko:Foundation*</include>
+							<include>${foundation.path}:Foundation*</include>
 						</includes>
 					</artifactSet>
 					<relocations>
