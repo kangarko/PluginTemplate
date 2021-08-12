@@ -67,17 +67,22 @@
 	    </pluginRepository>
 	</pluginRepositories>-->
 
-	<dependencies>
+	<dependencies>	
+		<!-- Use our Foundation library -->
+		<dependency>
+			<groupId>${foundation.path}</groupId>
+			<artifactId>Foundation</artifactId>
+			<version>${foundation.version}</version>
+		</dependency>
 		
 		<!-- (Optional) Access the server jar for NMS (groupId, artifactId and version do not matter and you 
 		     can only use it for your own organization purposes, but keep version in artifactId not in version
 		     if using multiple NMS imports otherwise Maven will fail to import them correctly).
 		    
-		     Make sure the server is on the top because the IDE will prioritize its methods
-			 over the latest Spigot API from Foundation in case you're developing for another MC version.
+		     Foundation by default uses the latest Spigot API version. If you want to develop for another
+		     version, move this dependency above Foundation here in this file so that your IDE.
 			 
 			 NB: Edit the <systemPath> to point out to your patched server file on your disk. -->
-
 		<!--<dependency>
 			<groupId>paper-server</groupId>
 			<artifactId>Paper-1.8.8</artifactId>
@@ -85,13 +90,6 @@
 			<scope>system</scope>
 			<systemPath>/Users/kangarko/Test Servers/1.8.8/cache/patched.jar</systemPath>
 		</dependency>-->
-		
-		<!-- Use our Foundation library -->
-		<dependency>
-			<groupId>${foundation.path}</groupId>
-			<artifactId>Foundation</artifactId>
-			<version>${foundation.version}</version>
-		</dependency>
 	</dependencies>
 
 	<!-- DO NOT EDIT unless instructed to do so or you know what you're doing. -->
