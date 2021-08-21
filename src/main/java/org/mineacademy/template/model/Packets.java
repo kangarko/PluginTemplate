@@ -23,7 +23,7 @@ public final class Packets {
 	public static void load() {
 
 		if (!HookManager.isProtocolLibLoaded()) {
-			Common.log("&cWarning: &fNo ProtocolLib found, some features will not be available.");
+			Common.warning("No ProtocolLib found, some features will not be available.");
 
 			return;
 		}
@@ -39,7 +39,7 @@ public final class Packets {
 			Common.log("Received tab complete packet '" + buffer + "' to " + event.getPlayer().getName());
 		});
 
-		// A custom handler for sending chat messages (they are pretty complicated to decipher 
+		// A custom handler for sending chat messages (they are pretty complicated to decipher
 		// so we made a wrapper for you)
 		PacketUtil.addPacketListener(new SimpleChatAdapter() {
 
