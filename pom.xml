@@ -41,7 +41,7 @@
 		
 		<!-- Change to the latest one from https://github.com/kangarko/Foundation/releases 
 		     or change to "LATEST" if you downloaded Foundation to your disk. -->
-		<foundation.version>5.10.14</foundation.version>
+		<foundation.version>5.11.0</foundation.version>
 		
 		<!-- Leave on "com.github.kangarko" if you use Foundation from GitHub like most people,
 		     or change to "org.mineacademy" if you downloaded our library to your disk. -->
