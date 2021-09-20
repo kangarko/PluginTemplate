@@ -20,6 +20,9 @@ public final class SampleCommand extends SimpleCommand {
 		setDescription("An example command");
 		setMinArguments(1);
 		setPermission(Permissions.Command.SAMPLE);
+
+		// Uncomment to get rid of the automatically generated help text: https://i.imgur.com/Q79RKN0.png
+		//setAutoHandleHelp(false);
 	}
 
 	/**
