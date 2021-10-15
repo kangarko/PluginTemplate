@@ -2,12 +2,14 @@ package org.mineacademy.template.command;
 
 import java.util.List;
 
+import org.mineacademy.fo.annotation.AutoRegister;
 import org.mineacademy.fo.command.SimpleCommand;
 import org.mineacademy.template.model.Permissions;
 
 /**
  * A sample standalone command.
  */
+@AutoRegister
 public final class SampleCommand extends SimpleCommand {
 
 	/**

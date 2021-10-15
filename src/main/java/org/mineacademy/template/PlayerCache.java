@@ -7,10 +7,9 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 
 import org.bukkit.entity.Player;
-import org.mineacademy.fo.collection.SerializedMap;
 import org.mineacademy.fo.constants.FoConstants;
 import org.mineacademy.fo.remain.Remain;
-import org.mineacademy.fo.settings.YamlSectionConfig;
+import org.mineacademy.fo.settings.YamlConfig;
 
 import lombok.Getter;
 
@@ -19,7 +18,7 @@ import lombok.Getter;
  * to data.db or MySQL database for players.
  */
 @Getter
-public final class PlayerCache extends YamlSectionConfig {
+public final class PlayerCache extends YamlConfig {
 
 	/**
 	 * The player cache map caching data for players online.
@@ -44,11 +43,10 @@ public final class PlayerCache extends YamlSectionConfig {
 	 * Creates a new player cache (see the bottom)
 	 */
 	private PlayerCache(String name, UUID uniqueId) {
-		super("Players." + uniqueId.toString());
-
 		this.playerName = name;
 		this.uniqueId = uniqueId;
 
+		this.setPathPrefix("Players." + uniqueId.toString());
 		this.loadConfiguration(NO_DEFAULT, FoConstants.File.DATA);
 	}
 
@@ -58,7 +56,7 @@ public final class PlayerCache extends YamlSectionConfig {
 	 * @see org.mineacademy.fo.settings.YamlConfig#onLoadFinish()
 	 */
 	@Override
-	protected void onLoadFinish() {
+	protected void onLoad() {
 		//
 		// Load any custom fields here, example:
 		// this.chatColor = get("Chat_Color", CompChatColor.class);
@@ -66,21 +64,15 @@ public final class PlayerCache extends YamlSectionConfig {
 	}
 
 	/**
-	 * Convert data in this class into a map that can
-	 * be saved into file or written to the databaes.
-	 *
-	 * @return
+	 * Called automatically when the file is about to be saved, set your field values here
 	 */
 	@Override
-	public SerializedMap serialize() {
-		final SerializedMap map = new SerializedMap();
+	public void onSave() {
 
 		//
 		// Save any custom fields here, example:
-		// map.putIf("Chat_Color", this.chatColor);
+		// this.set("Chat_Color", this.chatColor);
 		//
-
-		return map;
 	}
 
 	/* ------------------------------------------------------------------------------- */
@@ -119,8 +111,6 @@ public final class PlayerCache extends YamlSectionConfig {
 
 	/**
 	 * Remove this cached data from memory if it exists
-	 *
-	 * @param uniqueId
 	 */
 	public void removeFromMemory() {
 		synchronized (cacheMap) {
@@ -128,9 +118,6 @@ public final class PlayerCache extends YamlSectionConfig {
 		}
 	}
 
-	/**
-	 * @see org.mineacademy.fo.settings.YamlSectionConfig#toString()
-	 */
 	@Override
 	public String toString() {
 		return "PlayerCache{" + this.playerName + ", " + this.uniqueId + "}";
@@ -166,7 +153,7 @@ public final class PlayerCache extends YamlSectionConfig {
 	/**
 	 * Clear the entire cache map
 	 */
-	public static void clear() {
+	public static void clearCaches() {
 		synchronized (cacheMap) {
 			cacheMap.clear();
 		}

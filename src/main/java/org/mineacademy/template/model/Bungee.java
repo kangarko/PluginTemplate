@@ -3,15 +3,13 @@ package org.mineacademy.template.model;
 import java.util.UUID;
 
 import org.bukkit.entity.Player;
-import org.mineacademy.fo.bungee.BungeeAction;
+import org.mineacademy.fo.bungee.BungeeMessageType;
 import org.mineacademy.fo.bungee.BungeeListener;
 import org.mineacademy.fo.bungee.message.IncomingMessage;
 import org.mineacademy.fo.debug.Debugger;
 import org.mineacademy.fo.exception.FoException;
 
-import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 /**
  * A sample bungee handler with listener to incoming packets from BungeeCord
@@ -23,7 +21,6 @@ public final class Bungee {
 	 * Sample listener for upstream packets.
 	 */
 	@SuppressWarnings("unused")
-	@NoArgsConstructor(access = AccessLevel.PRIVATE)
 	public static final class Listener extends BungeeListener {
 
 		/**
@@ -31,6 +28,17 @@ public final class Bungee {
 		 */
 		@Getter
 		private final static Listener instance = new Listener();
+
+		/**
+		 * Automatically registers a listener to incoming packets from BungeeCord.
+		 * NB: Change "plugin:tmplugin" to your own channel name.
+		 * You will have to implement handling of this on BungeeCord by yourself.
+		 *
+		 * NB: The channel name can only be 16 characters long! (or 20 on MC 1.16+)
+		 */
+		private Listener() {
+			super("plugin:tmplugin", BungeePacket.class);
+		}
 
 		/**
 		 * The presently read packet, a copy is stored here for convenience if you use it later
@@ -43,7 +51,7 @@ public final class Bungee {
 		private String server;
 
 		/**
-		 * The sender of the packet, a copy is stored here for convenience if you use it later 
+		 * The sender of the packet, a copy is stored here for convenience if you use it later
 		 */
 		private UUID senderUid;
 
@@ -62,7 +70,7 @@ public final class Bungee {
 			if (this.packet == BungeePacket.SAMPLE_PACKET) {
 
 				//
-				// Implement your packet handling logic here 
+				// Implement your packet handling logic here
 				//
 
 				//final String demoField = input.readString();
@@ -73,7 +81,7 @@ public final class Bungee {
 			//
 			// Implement handling of all the other packets here
 			//
-			// else if 
+			// else if
 			//
 
 			else
@@ -90,12 +98,12 @@ public final class Bungee {
 	 *
 	 * 1) The UUID of the sender from which we send the packet, or null
 	 * 2) The sender server name
-	 * 3) The {@link BungeeAction}
+	 * 3) The {@link BungeeMessageType}
 	 *
 	 * and the rest is the actual data within this enum.
-	 * 
+	 *
 	 */
-	public enum BungeePacket implements BungeeAction {
+	public enum BungeePacket implements BungeeMessageType {
 
 		/**
 		 * An example packet you can define.

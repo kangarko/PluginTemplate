@@ -64,3 +64,6 @@ $RECYCLE.BIN/
 # Mac crap
 .DS_Store
 REBASE.bat
+
+# Place your proprietary software here, this won't get synced to remote 
+library/

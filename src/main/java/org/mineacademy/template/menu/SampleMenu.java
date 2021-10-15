@@ -16,6 +16,8 @@ import org.mineacademy.fo.menu.button.ButtonMenu;
 import org.mineacademy.fo.menu.model.ItemCreator;
 import org.mineacademy.fo.remain.CompMaterial;
 import org.mineacademy.fo.remain.CompMonsterEgg;
+import org.mineacademy.template.model.CustomDataStorage;
+import org.mineacademy.template.model.SampleEnchant;
 import org.mineacademy.template.model.SampleTool;
 
 /**
@@ -41,23 +43,31 @@ public final class SampleMenu extends Menu {
 
 		// Create a new button with click handler
 		this.sampleButton = Button.makeSimple(ItemCreator.of(CompMaterial.APPLE), player -> {
-			animateTitle("You clicked this button");
+			animateTitle("Received item with custom enchant");
+
+			ItemCreator.of(CompMaterial.DIAMOND_SWORD).enchant(SampleEnchant.getInstance()).give(player);
 		});
 
-		// Create a new button with anonymous class
+		// Create a new button with anonymous class, showing how to connect it with settings
 		this.sampleSecondButton = new Button() {
 
 			@Override
 			public void onClickedInMenu(Player player, Menu menu, ClickType click) {
-				animateTitle("You clicked the second button");
+				restartMenu((CustomDataStorage.getInstance().switchDemoValue() ? "Enabled" : "Disabled") + " demo value");
+
 			}
 
 			@Override
 			public ItemStack getItem() {
 
+				final boolean hasValue = CustomDataStorage.getInstance().isDemoValue();
+
 				return ItemCreator
-						.of(CompMaterial.DIAMOND)
-						.build()
+						.of(CompMaterial.DIAMOND,
+								"Diamond",
+								"",
+								"Demo value: " + hasValue)
+						.glow(hasValue)
 						.make();
 			}
 		};
@@ -117,7 +127,7 @@ public final class SampleMenu extends Menu {
 	}
 
 	/**
-	 * Show this menu to the given player 
+	 * Show this menu to the given player
 	 *
 	 * @param player
 	 */
@@ -136,7 +146,7 @@ public final class SampleMenu extends Menu {
 
 		/*
 		 * Create a new instance of this menu that will automatically add "Return Back"
-		 * button pointing to the parent menu. 
+		 * button pointing to the parent menu.
 		 */
 		private SamplePaggedMenu(Menu parent) {
 			super(parent, compileItems());
@@ -159,6 +169,16 @@ public final class SampleMenu extends Menu {
 
 			animateTitle("Added " + ItemUtil.bountifyCapitalized(item) + " to inventory!");
 		}
+
+		/**
+		 * Return null to hide the info icon.
+		 *
+		 * @see org.mineacademy.fo.menu.Menu#getInfo()
+		 */
+		@Override
+		protected String[] getInfo() {
+			return null;
+		}
 	}
 
 	/*
@@ -169,7 +189,7 @@ public final class SampleMenu extends Menu {
 
 		for (final EntityType type : EntityType.values())
 
-			// Still, some of the invalid eggs will slip through 
+			// Still, some of the invalid eggs will slip through
 			if (type.isSpawnable() && type.isAlive())
 				list.add(type);
 

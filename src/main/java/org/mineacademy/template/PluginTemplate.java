@@ -1,21 +1,11 @@
 package org.mineacademy.template;
 
+import org.bukkit.entity.EntityType;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.mineacademy.fo.Valid;
-import org.mineacademy.fo.bungee.SimpleBungee;
-import org.mineacademy.fo.command.SimpleCommandGroup;
 import org.mineacademy.fo.model.HookManager;
-import org.mineacademy.fo.model.Variables;
 import org.mineacademy.fo.plugin.SimplePlugin;
-import org.mineacademy.template.command.SampleCommand;
-import org.mineacademy.template.command.SampleCommandGroup;
-import org.mineacademy.template.listener.SampleListener;
-import org.mineacademy.template.model.Bungee;
-import org.mineacademy.template.model.Bungee.BungeePacket;
-import org.mineacademy.template.model.Discord;
-import org.mineacademy.template.model.Packets;
-import org.mineacademy.template.model.Placeholders;
-
-import lombok.Getter;
 
 /**
  * PluginTemplate is a simple template you can use every time you make
@@ -27,26 +17,8 @@ import lombok.Getter;
 public final class PluginTemplate extends SimplePlugin {
 
 	/**
-	 * Automatically registers the main command group. A command group holds different
-	 * commands, such as /chatcontrol is the main command group holding commands
-	 * /chatcontrol mute, /chatcontrol clear etc.
-	 */
-	@Getter
-	private final SimpleCommandGroup mainCommand = SampleCommandGroup.getInstance();
-
-	/**
-	 * Automatically registers a listener to incoming packets from BungeeCord.
-	 * NB: Change "plugin:templateplugin" to your own channel name.
-	 * You will have to implement handling of this on BungeeCord by yourself.
-	 *
-	 * NB: The channel name can only be 20 characters long!
-	 */
-	@Getter
-	private final SimpleBungee bungeeCord = new SimpleBungee("plugin:tmpltplugin", Bungee.Listener.getInstance(), BungeePacket.values());
-
-	/**
-	 * Automatically perform login ONCE when the plugin starts.
-	 */
+	* Automatically perform login ONCE when the plugin starts.
+	*/
 	@Override
 	protected void onPluginStart() {
 	}
@@ -60,35 +32,29 @@ public final class PluginTemplate extends SimplePlugin {
 		// You can check for necessary plugins and disable loading if they are missing
 		Valid.checkBoolean(HookManager.isVaultLoaded(), "You need to install Vault so that we can work with packets, offline player data, prefixes and groups.");
 
-		// Load parts of the plugin
-		Packets.load();
-
 		// Uncomment to load variables
 		// Variable.loadVariables();
 
-		// Register variables - PlaceholderAPI compatible
-		Variables.addExpansion(Placeholders.getInstance());
-
 		//
 		// Add your own plugin parts to load automatically here
+		// Please see @AutoRegister for parts you do not have to register manually
 		//
+	}
 
-		// Register commands
-		registerCommand(new SampleCommand());
+	/* ------------------------------------------------------------------------------- */
+	/* Events */
+	/* ------------------------------------------------------------------------------- */
 
-		//
-		// Add your own commands here
-		//
-
-		// Register events
-		registerEvents(SampleListener.getInstance());
-
-		if (HookManager.isDiscordSRVLoaded())
-			registerEvents(Discord.getInstance());
-
-		//
-		// Add your own events ere
-		//
+	/**
+	 * An example event that checks if the right clicked entity is a cow, and makes an explosion.
+	 * You can write your events to your main class without having to register a listener.
+	 *
+	 * @param event
+	 */
+	@EventHandler
+	public void onRightClick(PlayerInteractEntityEvent event) {
+		if (event.getRightClicked().getType() == EntityType.COW)
+			event.getRightClicked().getWorld().createExplosion(event.getRightClicked().getLocation(), 5);
 	}
 
 	/* ------------------------------------------------------------------------------- */

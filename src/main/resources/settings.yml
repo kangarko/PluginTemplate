@@ -39,9 +39,11 @@ Example:
   Sample_Flag: true
 
 # -------------------------------------------------------------------------------------------------
-# The format used in the {timestamp} placeholder (google "Java timestamp format" for options).
+# The formats used in the {timestamp} and {location} variables. For help with timestamp, see:
+# https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
 # -------------------------------------------------------------------------------------------------
 Timestamp_Format: "dd.MM.yyyy HH:mm:ss"
+Location_Format: "{world} [{x}, {y}, {z}]"
 
 # -------------------------------------------------------------------------------------------------
 # What commands should trigger the main plugin command group?
