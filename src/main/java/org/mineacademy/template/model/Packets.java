@@ -1,39 +1,40 @@
 package org.mineacademy.template.model;
 
 import org.mineacademy.fo.Common;
-import org.mineacademy.fo.PacketUtil;
-import org.mineacademy.fo.PacketUtil.SimpleChatAdapter;
-import org.mineacademy.fo.model.HookManager;
+import org.mineacademy.fo.model.PacketListener;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.ListenerPriority;
 
 import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 /**
  * A sample packet listener utilizing ProtocolLib
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class Packets {
+public final class Packets extends PacketListener {
+
+	/**
+	 * The instance of this class, hidden because the only call to this class is from
+	 * our auto registration class.
+	 */
+	@Getter(value = AccessLevel.PRIVATE)
+	private static final Packets instance = new Packets();
 
 	/**
 	 * Register and initiate packet listening
 	 */
-	public static void load() {
-
-		if (!HookManager.isProtocolLibLoaded()) {
-			Common.warning("No ProtocolLib found, some features will not be available.");
-
-			return;
-		}
+	@Override
+	public void onRegister() {
 
 		//
 		// Implement your own packet listeners here, samples below:
 		//
 
 		// Receiving tab complete
-		PacketUtil.addReceivingListener(ListenerPriority.HIGHEST, PacketType.Play.Client.TAB_COMPLETE, event -> {
+		addReceivingListener(ListenerPriority.HIGHEST, PacketType.Play.Client.TAB_COMPLETE, event -> {
 			final String buffer = event.getPacket().getStrings().read(0);
 
 			Common.log("Received tab complete packet '" + buffer + "' to " + event.getPlayer().getName());
@@ -41,7 +42,7 @@ public final class Packets {
 
 		// A custom handler for sending chat messages (they are pretty complicated to decipher
 		// so we made a wrapper for you)
-		PacketUtil.addPacketListener(new SimpleChatAdapter() {
+		addPacketListener(new SimpleChatAdapter() {
 
 			@Override
 			protected String onMessage(String message) {
@@ -54,5 +55,4 @@ public final class Packets {
 			}
 		});
 	}
-
 }

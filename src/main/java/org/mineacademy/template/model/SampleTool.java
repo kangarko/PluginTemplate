@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
  * An automatically registered tool you can use in the game
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class SampleTool extends Tool {
+public final class SampleTool extends Tool {
 
 	/**
 	 * The singular tool instance
@@ -42,7 +42,7 @@ public class SampleTool extends Tool {
 					"Click a block to",
 					"demostrate tool",
 					"listener ability.")
-					.build().make();
+					.make();
 
 		return item;
 	}

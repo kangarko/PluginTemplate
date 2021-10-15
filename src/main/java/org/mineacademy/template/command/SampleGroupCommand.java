@@ -8,12 +8,12 @@ import org.mineacademy.template.menu.SampleMenu;
 /**
  * A sample command belonging to a command group.
  */
-public final class SampleGroupCommand extends SimpleSubCommand {
+final class SampleGroupCommand extends SimpleSubCommand {
 
 	/**
 	 * Create a new sample group command, such as /sample menu.
 	 */
-	public SampleGroupCommand() {
+	SampleGroupCommand() {
 		super("menu");
 
 		setDescription("Opens the menu");

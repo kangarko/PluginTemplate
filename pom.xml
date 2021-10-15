@@ -1,50 +1,47 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
+	
 	<!-- Change to your own main package name. -->
 	<groupId>org.mineacademy</groupId>
 	
-	<!-- Change to your plugin name, must be lower cased and match your end package name. -->
+	<!-- Change to your plugin name, must be lower cased and match your end package name. No spaces. -->
 	<artifactId>plugintemplate</artifactId>
 	
 	<!-- Change to your plugin's name. Can contain capital letters, but do NOT use spaces. -->
 	<name>PluginTemplate</name>
 	
-	<!-- Change to the appropriate plugin's version you have. -->
+	<!-- Change to the appropriate plugin's version, starting at 1.0.0. -->
 	<version>1.0.0</version>
 	
 	<!-- DO NOT EDIT. -->
 	<packaging>jar</packaging>
-
+	
 	<properties>
 		
-		<!-- Change to your name or the main collaborator. -->
+		<!-- Change to your name or the main project author. -->
 		<author>kangarko</author>
 		
-		<!-- Change to the full path where your main class extending SimplePlugin is. -->
+		<!-- Change to the full path where your main plugin class is located. -->
 		<main.class>org.mineacademy.template.PluginTemplate</main.class>
 		
-		<!-- Change to the Java version used when compiling.
-		
-		     IMPORTANT: For Java 8, version is "1.8", for Java 11+ it is only "11" or "16".
-		
+		<!-- Change the Java version this plugin is built on.
+
+			 IMPORTANT: For Java 8, version is "1.8", for Java 11+ it is only "11" or "17".
+
 			 If you use 1.8 then your plugin will work on newer versions,
-			 but if you use "11" or "16" then it will not load on servers
-			 with previous Java version. We recommend you stick with 1.8.
-			 
-			 IF YOU WANT TO CODE WITH JAVA 16 THERE ARE CHANGES YOU MUST MAKE TO THIS
-			 FILE, SEE <pluginRepositories> AND VERSION IN THE maven-shade-plugin BELOW.
-			 -->	
+			 but if you use "11" or "17" then it will NOT load on servers
+			 with previous Java versions. We recommend you stick with 1.8.
+			 -->
 		<java.version>1.8</java.version>
 		
-		<!-- Change to the latest one from https://github.com/kangarko/Foundation/releases 
-		     or change to "LATEST" if you downloaded Foundation to your disk. -->
-		<foundation.version>5.11.0</foundation.version>
+		<!-- Change to the latest version from https://github.com/kangarko/Foundation/releases
+			 or change to "LATEST" if you downloaded Foundation to your disk and compiled it. -->
+		<foundation.version>6.0.1</foundation.version>
 		
 		<!-- Leave on "com.github.kangarko" if you use Foundation from GitHub like most people,
-		     or change to "org.mineacademy" if you downloaded our library to your disk. -->
+			 or change to "org.mineacademy" if you downloaded our library to your disk and compiled it. -->
 		<foundation.path>com.github.kangarko</foundation.path>
 		
 		<!-- DO NOT EDIT. -->
@@ -54,44 +51,44 @@
 	<repositories>
 		<!-- DO NOT EDIT, used to pull Foundation from the JitPack site. -->
 		<repository>
-		    <id>jitpack.io</id>
-		    <url>https://jitpack.io</url>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
 		</repository>
 	</repositories>
 	
-	<!-- UNCOMMENT ONLY IF YOUR java.version IS SET TO JAVA 16 OR HIGHER. -->
-	<!--<pluginRepositories>
-	    <pluginRepository>
-	        <id>maven-snapshots</id>
-	        <url>https://repository.apache.org/content/repositories/snapshots/</url>
-	    </pluginRepository>
-	</pluginRepositories>-->
-
-	<dependencies>	
-		<!-- Use our Foundation library -->
-		<dependency>
-			<groupId>${foundation.path}</groupId>
-			<artifactId>Foundation</artifactId>
-			<version>${foundation.version}</version>
-		</dependency>
+	<!-- Do NOT edit. -->
+	<pluginRepositories>
+		<pluginRepository>
+			<id>maven-snapshots</id>
+			<url>https://repository.apache.org/content/repositories/snapshots/</url>
+		</pluginRepository>
+	</pluginRepositories>
+	
+	<dependencies>
 		
-		<!-- (Optional) Access the server jar for NMS (groupId, artifactId and version do not matter and you 
-		     can only use it for your own organization purposes, but keep version in artifactId not in version
-		     if using multiple NMS imports otherwise Maven will fail to import them correctly).
-		    
-		     Foundation by default uses the latest Spigot API version. If you want to develop for another
-		     version, move this dependency above Foundation here in this file so that your IDE.
-			 
-			 NB: Edit the <systemPath> to point out to your patched server file on your disk. -->
+		<!-- (Optional) Access the server jar for NMS (groupId, artifactId and version do not matter,
+			 but keep version in artifactId and not in version if using multiple NMS imports,
+			 otherwise Maven will fail to import them correctly).
+
+			 NB: The <systemPath> is set to the "library" folder in your source folder (in the same parent
+			     directory where you have "target" and will look for file patched_1.8.8.jar there as an example. -->
 		<!--<dependency>
 			<groupId>paper-server</groupId>
 			<artifactId>Paper-1.8.8</artifactId>
 			<version>1</version>
 			<scope>system</scope>
-			<systemPath>/Users/kangarko/Test Servers/1.8.8/cache/patched.jar</systemPath>
+			<systemPath>${project.basedir}/library/patched_1.8.8.jar</systemPath>
 		</dependency>-->
+		
+		<!-- Use our Foundation library. It contains the latest Spigot API, you only need to import that if you build
+			 for a different version. In that case, place your API above Foundation so Maven will prioritize it. -->
+		<dependency>
+			<groupId>${foundation.path}</groupId>
+			<artifactId>Foundation</artifactId>
+			<version>${foundation.version}</version>
+		</dependency>
 	</dependencies>
-
+	
 	<!-- DO NOT EDIT unless instructed to do so or you know what you're doing. -->
 	<build>
 		<finalName>${project.name}-${project.version}</finalName>
@@ -102,7 +99,7 @@
 				
 				<!-- Change version to the latest one from
 					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
-				<version>3.2.0</version>
+				<version>3.2.2</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -110,7 +107,7 @@
 				
 				<!-- Change version to the latest one from
 					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-				<version>3.8.1</version>
+				<version>3.10.1</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
@@ -120,13 +117,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
 				
-				<!-- Change version to the latest one from 
-					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin 
-					 
-					 IF YOU USE JAVA 16 THEN PLACE 3.3.0-SNAPSHOT TO THE VERSION AND MAKE SURE TO
-					 UNCOMMENT <pluginRepositories> above.
-					 -->
-				<version>3.2.4</version>
+				<!-- We use latest snapshot here for modern Java compatibility. Change version to the latest one from
+					 https://repository.apache.org/content/repositories/snapshots/org/apache/maven/plugins/maven-shade-plugin/ -->
+				<version>3.3.1-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -143,6 +136,7 @@
 						</includes>
 					</artifactSet>
 					<relocations>
+						<!-- Move the Foundation library into your own package in "lib" subpackage to prevent interference. -->
 						<relocation>
 							<pattern>org.mineacademy.fo</pattern>
 							<shadedPattern>${project.groupId}.${project.artifactId}.lib</shadedPattern>

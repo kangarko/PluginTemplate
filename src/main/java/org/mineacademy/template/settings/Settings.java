@@ -59,7 +59,7 @@ public final class Settings extends SimpleSettings {
 
 			// A convenience method to instruct the loader to prepend all paths with Example so you
 			// do not have to call "Example.Key1", "Example.Key2" all the time, only "Key1" and "Key2".
-			pathPrefix("Example");
+			setPathPrefix("Example");
 
 			SAMPLE_FLAG = getBoolean("Sample_Flag");
 		}
@@ -71,6 +71,6 @@ public final class Settings extends SimpleSettings {
 	 * See above for usage.
 	 */
 	private static void init() {
-		pathPrefix(null);
+		setPathPrefix(null);
 	}
 }

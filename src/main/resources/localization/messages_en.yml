@@ -28,6 +28,18 @@
 # Messages related to commands
 # -------------------------------------------------------------------------------------------------
 Commands: 
+  Error: "&4&lOups! &cThe command failed :( Check the console and report the error."
+  Header_No_Subcommands: "&cThere are no arguments for this command."
+  Header_No_Subcommands_Permission: "&cYou don't have permissions to view any subcommands."
+  Header_Color: GOLD
+  Header_Secondary_Color: RED
+  Reloading: "reloading"
+  Disabled: "disabled"
+  Use_While_Null: "&cCannot use this command while the plugin is {state}."
+  Incompatible: "This command requires Minecraft {0} or greater."
+  Toggled_Plugin_Part: "'&7You are ' + (ignoring ? '&2no longer' : '&cnow') + ' &7ignoring {0}.'"
+  Use_Alternative_Header: false
+  Alternative_Header: "&c{plugin_name}: &7Type '/{0} ?' to see all commands."
   No_Console: "&cYou may only use this command as a player."
   No_BungeeCord: "You need BungeeCord enabled use this feature."
   Console_Missing_Player_Name: "When running from console, specify player name."
@@ -37,6 +49,8 @@ Commands:
   Invalid_Argument_Multiline: "&cInvalid argument. Usage:"
   Invalid_Time: "Expected time such as '3 hours' or '15 minutes', got: '{input}'"
   Invalid_Number: "The number must be a whole or a decimal number. Got: '{input}'"
+  Invalid_String: "&cInvalid string. Got: '{input}&c'"
+  Invalid_World: "Invalid world '{world}'. Available: {available}"
   Label_Authors: "Made by"
   Label_Description: "&c&lDescription:"
   Label_Optional_Args: "optional arguments"
@@ -69,18 +83,6 @@ Commands:
   Perms_Applied: "&7Do you have it? "
   Perms_Yes: "&2yes"
   Perms_No: "&cno"
-  Error: "&4&lOups! &cThe command failed :( Check the console and report the error."
-  Header_No_Subcommands: "&cThere are no arguments for this command."
-  Header_No_Subcommands_Permission: "&cYou don't have permissions to view any subcommands."
-  Header_Color: GOLD
-  Header_Secondary_Color: RED
-  Reloading: "reloading"
-  Disabled: "disabled"
-  Use_While_Null: "&cCannot use this command while the plugin is {state}."
-  Incompatible: "This command requires Minecraft {0} or greater."
-  Toggled_Plugin_Part: "'&7You are ' + (ignoring ? '&2no longer' : '&cnow') + ' &7ignoring {0}.'"
-  Use_Alternative_Header: false
-  Alternative_Header: "&c{plugin_name}: &7Type '/{0} ?' to see all commands."
 
 # -------------------------------------------------------------------------------------------------
 # Messages related to paginator splitting command help into multiple pages
@@ -102,6 +104,7 @@ Pages:
 Player: 
   Not_Online: "&cPlayer {player} &cis not online on this server."
   Not_Played_Before: "&cPlayer {player} &chas not played before or we could not locate his disk data."
+  Invalid_UUID: "&cCould not find a player from UUID {uuid}."
   
 # -------------------------------------------------------------------------------------------------
 # Messages related to menus
@@ -120,7 +123,15 @@ Menu:
   Button_Return_Lore:
   - ""
   - "Return back."
-  
+
+# -------------------------------------------------------------------------------------------------
+# Messages related to player conversation where server is waiting for his chat input
+# -------------------------------------------------------------------------------------------------
+Conversation:
+  Not_Conversing: "&cYou can only use this command when you are asked to type something in the chat."
+  Requires_Player: "Only players may enter this conversation."
+  Error: "&cOups! There was a problem in this conversation! Please contact the administrator to review the console for details."
+
 # -------------------------------------------------------------------------------------------------
 # Messages related to tools
 # -------------------------------------------------------------------------------------------------
@@ -140,9 +151,9 @@ Cases:
 # -------------------------------------------------------------------------------------------------
 Prefix:
   Info: "&8&l[&9&li&8&l]&7 "
-  Success: "&8&l[&2&l\u2714&8&l]&7 "
+  Success: "&8&l[&2&l!&8&l]&7 "
   Warn: "&8&l[&6&l!&8&l]&6 "
-  Error: "&8&l[&4&l\u2715&8&l]&c "
+  Error: "&8&l[&4&lX&8&l]&c "
   Question: "&8&l[&a&l?&l&8]&7 "
   Announce: "&8&l[&5&l!&l&8]&d "
 
@@ -163,11 +174,6 @@ Data_Loading: "Database is currently loading data, please wait..."
 # Messages shown when player runs a command he lacks permission for
 # -------------------------------------------------------------------------------------------------
 No_Permission: "&cNo permission: {permission}" 
-
-# -------------------------------------------------------------------------------------------------
-# Shown when console tries to enter a server conversation
-# -------------------------------------------------------------------------------------------------
-Conversation_Requires_Player: "Only players may enter this conversation."
 
 # -------------------------------------------------------------------------------------------------
 # Internal versioning number

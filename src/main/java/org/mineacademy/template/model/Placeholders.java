@@ -13,18 +13,22 @@ import lombok.NonNull;
 
 /**
  * A sample placeholder hook utilizing PlaceholderAPI but also working without it.
- * 
+ *
  * Without PAPI: simply use {test1}
  * With PAPI: you need to prepend the variable with your plugin name, such as {chatcontrol_test1}
+ *
+ * NB: Please use Variables#replace in event#setMessage when listening to AsyncPlayerChatEvent
+ *     if you want this to work without PlaceholderAPI.
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class Placeholders extends SimpleExpansion {
 
 	/**
-	 * The singleton of this class
+	 * The instance of this class, hidden because the only call to this class is from
+	 * our auto registration class.
 	 */
-	@Getter
-	private static final SimpleExpansion instance = new Placeholders();
+	@Getter(value = AccessLevel.PRIVATE)
+	private static final Placeholders instance = new Placeholders();
 
 	/**
 	 * @see org.mineacademy.fo.model.SimpleExpansion#onReplace(org.bukkit.command.CommandSender, java.lang.String)
