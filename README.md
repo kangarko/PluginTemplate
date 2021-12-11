@@ -1,5 +1,5 @@
 <p align="center">
-  Do you want to learn Java and code highly-customized Minecraft plugins? I've made a training for you!
+  Do you want to learn Java and code highly-customized Minecraft plugins? I've made a training for you! (It uses PluginTemplate as an example)
   <a href="https://mineacademy.org/project-orion">
     <img src="https://i.imgur.com/OJuN0qP.png" />
   </a>
