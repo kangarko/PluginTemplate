@@ -28,7 +28,7 @@
 	    		<!--<fileset dir="../Foundation/target/classes"/>-->
 	        </jar>
 			
-	    	<jar jarfile="/Users/kangarko/Test Servers/1.17/plugins/${ant.project.name}.jar" basedir="./target/classes/" includes="**/*">
+	    	<jar jarfile="/Users/kangarko/Test Servers/1.18/plugins/${ant.project.name}.jar" basedir="./target/classes/" includes="**/*">
 	    		<zipgroupfileset dir="${user.home}/.m2/repository/com/github/kangarko/Foundation/${foundation.version}/" includes="**/*${foundation.version}.jar" />
 	    		<!--<fileset dir="../Foundation/target/classes"/>-->
 	    	</jar>	
