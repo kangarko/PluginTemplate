@@ -13,7 +13,7 @@ author: ${author}
 api-version: 1.13
 # DO NOT EDIT. This will enable Nashorn library on servers using Java 15 or greater.
 libraries: 
-  - org.openjdk.nashorn:nashorn-core:15.3
+  - org.openjdk.nashorn:nashorn-core:15.4
 # Plugins that we support so that we are loaded after them for your convenience.
 softdepend: [AuthMe, BanManager, BungeeChatAPI, CMI, DiscordSRV, Factions, Feudal, ItemsAdder, Essentials, LegacyFactions, Lands, LuckPerms, Multiverse-Core, MVdWPlaceholderAPI, MythicMobs, mcMMO, NashornPlus, Nicky, PlaceholderAPI, ProtocolLib, SimpleClans, Towny, TownyChat, Vault, WorldEdit]
 #
