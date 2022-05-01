@@ -102,7 +102,7 @@
 				
 				<!-- Change version to the latest one from
 					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
-				<version>3.2.0</version>
+				<version>3.2.2</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -110,7 +110,7 @@
 				
 				<!-- Change version to the latest one from
 					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-				<version>3.8.1</version>
+				<version>3.10.1</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
@@ -126,7 +126,7 @@
 					 IF YOU USE JAVA 16 THEN PLACE 3.3.0-SNAPSHOT TO THE VERSION AND MAKE SURE TO
 					 UNCOMMENT <pluginRepositories> above.
 					 -->
-				<version>3.2.4</version>
+				<version>3.3.0</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
