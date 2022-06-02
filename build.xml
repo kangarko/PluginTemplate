@@ -25,7 +25,7 @@
 	    		<!-- IF you have Foundation on your disk, remove the <zipgroupfileset> line and uncomment the <fileset> one. Repeat for the other <jar> goal below.
 	    			 Foundation then needs to be in the same parent's folder as your plugin's source, such as workspace/Foundation and workspace/YourPlugin -->
 
-	    		<zipgroupfileset dir="${user.home}/.m2/repository/com/github/kangarko/Foundation/${foundation.version}/" includes="**/*${foundation.version}.jar" />-->
+	    		<zipgroupfileset dir="${user.home}/.m2/repository/com/github/kangarko/Foundation/${foundation.version}/" includes="**/*${foundation.version}.jar" />
 	    		<!--<fileset dir="../Foundation/target/classes"/>-->
 	        </jar>
 			
