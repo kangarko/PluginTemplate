@@ -80,6 +80,9 @@
 			<systemPath>${project.basedir}/library/patched_1.8.8.jar</systemPath>
 		</dependency>-->
 		
+        <!-- We do not need to import Spigot API since it is made available through Foundation below.
+            If you want to code for another MC version, import it above Foundation as per https://www.spigotmc.org/wiki/spigot-maven/ -->		
+		
 		<!-- Use our Foundation library. It contains the latest Spigot API, you only need to import that if you build
 			 for a different version. In that case, place your API above Foundation so Maven will prioritize it. -->
 		<dependency>
