@@ -3,8 +3,9 @@ package org.mineacademy.template.model;
 import java.util.UUID;
 
 import org.bukkit.entity.Player;
-import org.mineacademy.fo.bungee.BungeeMessageType;
+import org.mineacademy.fo.annotation.AutoRegister;
 import org.mineacademy.fo.bungee.BungeeListener;
+import org.mineacademy.fo.bungee.BungeeMessageType;
 import org.mineacademy.fo.bungee.message.IncomingMessage;
 import org.mineacademy.fo.debug.Debugger;
 import org.mineacademy.fo.exception.FoException;
@@ -21,6 +22,7 @@ public final class Bungee {
 	 * Sample listener for upstream packets.
 	 */
 	@SuppressWarnings("unused")
+	@AutoRegister
 	public static final class Listener extends BungeeListener {
 
 		/**
@@ -112,7 +114,7 @@ public final class Bungee {
 				String.class /* example field */,
 				UUID.class /* example field */,
 				Boolean.class /* example field */
-		),
+				),
 
 		//
 		// Implement more packets here

@@ -1,6 +1,7 @@
 package org.mineacademy.template.model;
 
 import org.mineacademy.fo.Common;
+import org.mineacademy.fo.annotation.AutoRegister;
 import org.mineacademy.fo.model.PacketListener;
 
 import com.comphenix.protocol.PacketType;
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 /**
  * A sample packet listener utilizing ProtocolLib
  */
+@AutoRegister(hideIncompatibilityWarnings = true)
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class Packets extends PacketListener {
 

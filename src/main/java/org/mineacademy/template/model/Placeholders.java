@@ -4,6 +4,7 @@ import org.bukkit.GameMode;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.mineacademy.fo.ReflectionUtil;
+import org.mineacademy.fo.annotation.AutoRegister;
 import org.mineacademy.fo.model.SimpleExpansion;
 
 import lombok.AccessLevel;
@@ -20,6 +21,7 @@ import lombok.NonNull;
  * NB: Please use Variables#replace in event#setMessage when listening to AsyncPlayerChatEvent
  *     if you want this to work without PlaceholderAPI.
  */
+@AutoRegister
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class Placeholders extends SimpleExpansion {
 
