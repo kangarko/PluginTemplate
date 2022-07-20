@@ -18,7 +18,6 @@ import lombok.NoArgsConstructor;
  * A sample Discord listener utilizing DiscordSRV
  */
 // Hide "DiscordListener requires DiscordSRV" console message.
-// Optional, we always register any DiscordListener class even without this annotation.
 @AutoRegister(hideIncompatibilityWarnings = true)
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class Discord extends DiscordListener {
