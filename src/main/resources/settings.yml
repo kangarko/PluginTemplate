@@ -72,7 +72,7 @@ Prefix: "&8[&c${project.name}&8]&7 "
 Log_Lag_Over_Milis: 100
 
 # -------------------------------------------------------------------------------------------------
-# List of section names that will print informative messages about their features.
+# List of section names that will print informative messages about this plugin's features.
 # The Debugger class utilizes this key and will only print messages for sections enabled below.
 # -------------------------------------------------------------------------------------------------
 Debug: []
