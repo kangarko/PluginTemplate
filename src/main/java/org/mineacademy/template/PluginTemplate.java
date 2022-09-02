@@ -3,8 +3,6 @@ package org.mineacademy.template;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
-import org.mineacademy.fo.Valid;
-import org.mineacademy.fo.model.HookManager;
 import org.mineacademy.fo.plugin.SimplePlugin;
 
 /**
@@ -30,7 +28,7 @@ public final class PluginTemplate extends SimplePlugin {
 	protected void onReloadablesStart() {
 
 		// You can check for necessary plugins and disable loading if they are missing
-		Valid.checkBoolean(HookManager.isVaultLoaded(), "You need to install Vault so that we can work with packets, offline player data, prefixes and groups.");
+		//Valid.checkBoolean(HookManager.isVaultLoaded(), "You need to install Vault so that we can work with packets, offline player data, prefixes and groups.");
 
 		// Uncomment to load variables
 		// Variable.loadVariables();
