@@ -1,0 +1,71 @@
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
+#parse("File Header.java")
+
+import org.mineacademy.fo.settings.ConfigItems;
+import org.mineacademy.fo.settings.YamlConfig;
+
+import java.util.Set;
+
+/**
+ * With this class you are able to create a folder,
+ * in which you can store files, easy-peasy!
+ */
+public final class ${NAME} extends YamlConfig {
+
+    private final static ConfigItems<${NAME}> loaded${WHAT_TO_LOAD} = ConfigItems.fromFolder("${LOAD_IN_FOLDER}", ${NAME}.class);
+
+    private String SAMPLE_STRING;
+    private Boolean SAMPLE_BOOLEAN;
+
+    private ${NAME}(final String name) {
+        this.loadConfiguration(NO_DEFAULT, "${LOAD_IN_FOLDER}/" + name + ".yml");
+    }
+
+    @Override
+    protected void onLoad() {
+        this.SAMPLE_STRING = this.getString("Sample_String");
+        this.SAMPLE_BOOLEAN = this.getBoolean("Sample_Boolean");
+
+        // You can also use #get method, if you want to call own method implementing ConfigSerializable for example or else..
+        // this.SOMETHING = this.get("Something", Something.class);
+    }
+
+    @Override
+    protected void onSave() {
+        this.set("Sample_String", this.SAMPLE_STRING);
+        this.set("Sample_Boolean", this.SAMPLE_BOOLEAN);
+    }
+
+    public static ${NAME} createData(final String name) {
+        return loaded${WHAT_TO_LOAD}.loadOrCreateItem(name, () -> new ${NAME}(name));
+    }
+
+    public void removeData(final ${NAME} templateFolderData) {
+        loaded${WHAT_TO_LOAD}.removeItem(templateFolderData);
+    }
+
+    public void removeDataByName(final String name) {
+        loaded${WHAT_TO_LOAD}.removeItemByName(name);
+    }
+
+    public static ${NAME} findData(final String name) {
+        return loaded${WHAT_TO_LOAD}.findItem(name);
+    }
+
+    public static boolean isDataLoaded(final String name) {
+        return loaded${WHAT_TO_LOAD}.isItemLoaded(name);
+    }
+
+    public static Set<String> getLoadedDatasNames() {
+        return loaded${WHAT_TO_LOAD}.getItemNames();
+    }
+
+    /*
+        Don't forget to call this method in class
+        extending SimplePlugin -> onReloadablesStart method
+     */
+    public static void load${WHAT_TO_LOAD}() {
+        loaded${WHAT_TO_LOAD}.loadItems();
+    }
+
+}
