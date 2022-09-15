@@ -2,6 +2,7 @@ package org.mineacademy.template;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 
 import javax.annotation.Nullable;
@@ -116,6 +117,22 @@ public final class PlayerCache extends YamlConfig {
 		synchronized (cacheMap) {
 			cacheMap.remove(this.uniqueId);
 		}
+	}
+
+	/**
+	 * Compare if two caches are equal on the basis of {@link UUID} since it is unique.
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		return obj instanceof PlayerCache && ((PlayerCache) obj).getUniqueId().equals(this.uniqueId);
+	}
+
+	/**
+	 * Generate unique hash code from {@link UUID}.
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(this.uniqueId);
 	}
 
 	@Override
