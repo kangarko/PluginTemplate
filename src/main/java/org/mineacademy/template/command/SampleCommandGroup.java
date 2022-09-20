@@ -72,11 +72,11 @@ public final class SampleCommandGroup extends SimpleCommandGroup {
 	protected void registerSubcommands() {
 
 		// Register a sample command for this group
-		registerSubcommand(new SampleGroupCommand());
+		this.registerSubcommand(new SampleGroupCommand());
 
 		// Register the premade commands from Foundation
-		registerSubcommand(new PermsCommand(Permissions.class, "templateplugin.command.perms"));
-		registerSubcommand(new DebugCommand("templateplugin.command.debug"));
-		registerSubcommand(new ReloadCommand("templateplugin.command.reload"));
+		this.registerSubcommand(new PermsCommand(Permissions.class, "templateplugin.command.perms"));
+		this.registerSubcommand(new DebugCommand("templateplugin.command.debug"));
+		this.registerSubcommand(new ReloadCommand("templateplugin.command.reload"));
 	}
 }

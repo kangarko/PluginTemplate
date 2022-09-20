@@ -34,8 +34,8 @@ public final class SampleTool extends Tool {
 	@Override
 	public ItemStack getItem() {
 
-		if (item == null)
-			item = ItemCreator.of(
+		if (this.item == null)
+			this.item = ItemCreator.of(
 					CompMaterial.GOLDEN_AXE,
 					"Sample Tool",
 					"",
@@ -44,7 +44,7 @@ public final class SampleTool extends Tool {
 					"listener ability.")
 					.make();
 
-		return item;
+		return this.item;
 	}
 
 	/**

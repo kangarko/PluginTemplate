@@ -46,7 +46,7 @@ public final class Discord extends DiscordListener {
 		event.setCancelled(true);
 
 		// And forward MC chat to your own Discord channel instead
-		sendWebhookMessage(event.getPlayer(), "standard", event.getMessage());
+		this.sendWebhookMessage(event.getPlayer(), "standard", event.getMessage());
 	}
 
 	/**
@@ -67,14 +67,8 @@ public final class Discord extends DiscordListener {
 		// Remove emoji
 		message = ChatUtil.removeEmoji(message);
 
-		if (!message.trim().isEmpty()) {
-
-			//
-			// Implement your own logic of handling Discord>Minecraft here
-			//
-
+		if (!message.trim().isEmpty())
 			Common.broadcast("&8[&dDiscord / " + discordChannel.getName() + "&8] &7" + senderName + "&8: &f" + message);
-		}
 
 		// Prevent DiscordSRV making the message appear in chat in case you want to send it above
 		event.setCancelled(true);

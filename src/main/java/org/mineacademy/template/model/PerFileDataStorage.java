@@ -92,8 +92,8 @@ public final class PerFileDataStorage extends YamlConfig {
 		}
 
 		// Remove this line and use the two lines above in the comment if you want to use defaults
-		this.type = getString("Type");
-		this.extraInfo = getString("Extra_Info");
+		this.type = this.getString("Type");
+		this.extraInfo = this.getString("Extra_Info");
 	}
 
 	/**

@@ -36,7 +36,7 @@ public final class Packets extends PacketListener {
 		//
 
 		// Receiving tab complete
-		addReceivingListener(ListenerPriority.HIGHEST, PacketType.Play.Client.TAB_COMPLETE, event -> {
+		this.addReceivingListener(ListenerPriority.HIGHEST, PacketType.Play.Client.TAB_COMPLETE, event -> {
 			final String buffer = event.getPacket().getStrings().read(0);
 
 			Common.log("Received tab complete packet '" + buffer + "' to " + event.getPlayer().getName());
@@ -44,7 +44,7 @@ public final class Packets extends PacketListener {
 
 		// A custom handler for sending chat messages (they are pretty complicated to decipher
 		// so we made a wrapper for you)
-		addPacketListener(new SimpleChatAdapter() {
+		this.addPacketListener(new SimpleChatAdapter() {
 
 			@Override
 			protected String onMessage(String message) {

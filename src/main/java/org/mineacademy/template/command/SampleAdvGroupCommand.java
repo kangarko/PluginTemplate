@@ -22,9 +22,9 @@ final class SampleAdvGroupCommand extends SimpleSubCommand {
 	SampleAdvGroupCommand() {
 		super("region|rg");
 
-		setDescription(Lang.of("Commands.Region.Description"));
-		setUsage("<params ...>");
-		setMinArguments(1);
+		this.setDescription(Lang.of("Commands.Region.Description"));
+		this.setUsage("<params ...>");
+		this.setMinArguments(1);
 	}
 
 	@Override
@@ -42,9 +42,9 @@ final class SampleAdvGroupCommand extends SimpleSubCommand {
 	@Override
 	protected void onCommand() {
 
-		final String regionName = args.length > 1 ? args[1] : null;
+		final String regionName = this.args.length > 1 ? this.args[1] : null;
 		//final BossRegion region = regionName != null ? BossRegion.findRegion(regionName) : null;
-		final Param param = Param.find(args[0]);
+		final Param param = Param.find(this.args[0]);
 
 		if (param == null)
 			throw new InvalidCommandArgException();
@@ -52,39 +52,24 @@ final class SampleAdvGroupCommand extends SimpleSubCommand {
 		//
 		// Commands without a region.
 		//
-		if (param == Param.LIST) {
-			// Implement command logic, i.e. here, we can use ChatPaginator
-
+		if (param == Param.LIST)
 			return;
-		}
-
-		else if (param == Param.NEW) {
-			// Implement command logic
-
+		else if (param == Param.NEW)
 			return;
-		}
 
 		// Require region name for all params below, except view, but when it is provided, check it
-		if (param != Param.VIEW || (param == Param.VIEW && regionName != null)) {
-			checkNotNull(regionName, "&cPlease specify the region name.");
-			//checkNotNull(region, "&cRegion '" + regionName + "' doesn't exists.");
-		}
+		if (param != Param.VIEW || (param == Param.VIEW && regionName != null))
+			this.checkNotNull(regionName, "&cPlease specify the region name.");
+		//checkNotNull(region, "&cRegion '" + regionName + "' doesn't exists.");
 
-		if (param == Param.MENU) {
-			checkConsole();
-
-			// Implement command logic
-
-		} else if (param == Param.REMOVE) {
+		if (param == Param.MENU)
+			this.checkConsole();
+		else if (param == Param.REMOVE) {
 			// Implement command logic
 		}
 
-		else if (param == Param.VIEW) {
-			checkConsole();
-
-			// Implement command logic
-		}
-
+		else if (param == Param.VIEW)
+			this.checkConsole();
 		else if (param == Param.TELEPORT) {
 			// Implement command logic
 		}
@@ -97,14 +82,14 @@ final class SampleAdvGroupCommand extends SimpleSubCommand {
 	@Override
 	public List<String> tabComplete() {
 
-		final Param param = args.length > 0 ? Param.find(args[0]) : null;
+		final Param param = this.args.length > 0 ? Param.find(this.args[0]) : null;
 
-		switch (args.length) {
+		switch (this.args.length) {
 			case 1:
-				return completeLastWord(Param.values());
+				return this.completeLastWord(Param.values());
 
 			case 2:
-				return param == Param.LIST || param == Param.NEW ? NO_COMPLETE : completeLastWord(/*BossRegion.getRegionNames()*/ "EMPTY");
+				return param == Param.LIST || param == Param.NEW ? NO_COMPLETE : this.completeLastWord(/*BossRegion.getRegionNames()*/ "EMPTY");
 		}
 
 		return NO_COMPLETE;
