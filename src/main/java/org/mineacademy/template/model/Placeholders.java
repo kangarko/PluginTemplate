@@ -58,7 +58,7 @@ public final class Placeholders extends SimpleExpansion {
 			if (player == null)
 				return "false";
 
-			final String gamemodeName = join(3);
+			final String gamemodeName = this.join(3);
 			final GameMode gamemode = ReflectionUtil.lookupEnumSilent(GameMode.class, gamemodeName.toUpperCase());
 
 			return gamemode == null ? "invalid" : player.getGameMode() == gamemode ? "true" : "false";

@@ -114,7 +114,7 @@ public final class Bungee {
 				String.class /* example field */,
 				UUID.class /* example field */,
 				Boolean.class /* example field */
-				),
+		),
 
 		//
 		// Implement more packets here

@@ -12,7 +12,7 @@ public final class SampleAPI {
 	/**
 	 * Return the main instance of this plugin
 	 *
-	 * @return 
+	 * @return
 	 */
 	public static PluginTemplate getAPI() {
 		return PluginTemplate.getInstance();
@@ -20,7 +20,7 @@ public final class SampleAPI {
 
 	/**
 	 * Get the player cache. Creates the cache if it does not exist.
-	 * 
+	 *
 	 * Please use with caution since we do create this cache on PlayerJoinEvent
 	 * when the player joins automatically.
 	 *

@@ -38,12 +38,12 @@ public final class SampleMenu extends Menu {
 	 */
 	private SampleMenu() {
 
-		setTitle("Sample Menu");
-		setSize(9 * 4);
+		this.setTitle("Sample Menu");
+		this.setSize(9 * 4);
 
 		// Create a new button with click handler
 		this.sampleButton = Button.makeSimple(ItemCreator.of(CompMaterial.APPLE), player -> {
-			animateTitle("Received item with custom enchant");
+			this.animateTitle("Received item with custom enchant");
 
 			ItemCreator.of(CompMaterial.DIAMOND_SWORD).enchant(SampleEnchant.getInstance()).give(player);
 		});
@@ -53,7 +53,7 @@ public final class SampleMenu extends Menu {
 
 			@Override
 			public void onClickedInMenu(Player player, Menu menu, ClickType click) {
-				restartMenu((CustomDataStorage.getInstance().switchDemoValue() ? "Enabled" : "Disabled") + " demo value");
+				SampleMenu.this.restartMenu((CustomDataStorage.getInstance().switchDemoValue() ? "Enabled" : "Disabled") + " demo value");
 
 			}
 
@@ -167,7 +167,7 @@ public final class SampleMenu extends Menu {
 		protected void onPageClick(Player player, EntityType item, ClickType click) {
 			player.getInventory().addItem(CompMonsterEgg.makeEgg(item));
 
-			animateTitle("Added " + ItemUtil.bountifyCapitalized(item) + " to inventory!");
+			this.animateTitle("Added " + ItemUtil.bountifyCapitalized(item) + " to inventory!");
 		}
 
 		/**

@@ -1,12 +1,13 @@
 package org.mineacademy.template.listener;
 
-import lombok.AccessLevel;
-import lombok.Getter;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.annotation.AutoRegister;
 import org.mineacademy.fo.event.SimpleListener;
+
+import lombok.AccessLevel;
+import lombok.Getter;
 
 /**
  * An example of an advanced listener that enables customizing

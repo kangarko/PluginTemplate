@@ -16,7 +16,7 @@ final class SampleGroupCommand extends SimpleSubCommand {
 	SampleGroupCommand() {
 		super("menu");
 
-		setDescription("Opens the menu");
+		this.setDescription("Opens the menu");
 		//setPermission("chatcontrol.command.announce");
 	}
 
@@ -25,9 +25,9 @@ final class SampleGroupCommand extends SimpleSubCommand {
 	 */
 	@Override
 	protected void onCommand() {
-		checkConsole();
+		this.checkConsole();
 
-		SampleMenu.showTo(getPlayer());
+		SampleMenu.showTo(this.getPlayer());
 	}
 
 	/**

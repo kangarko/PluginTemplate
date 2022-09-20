@@ -107,7 +107,7 @@ public final class SampleCommand extends SimpleCommand {
 			// Automatically finds an online player (BungeeCord is NOT supported here)
 			// If the player is not on this server, we automatically return with an error message,
 			// editable in localization/messages_en.yml
-			final Player target = this.findPlayer(args[1]);
+			final Player target = this.findPlayer(this.args[1]);
 			final String message = Common.joinRange(2, this.args);
 
 			// Our compatibility library sends the action bar on Minecraft 1.8.8+ and as text on older MC.
@@ -124,16 +124,16 @@ public final class SampleCommand extends SimpleCommand {
 	protected List<String> tabComplete() {
 
 		// Automatically returns tab completion suggestions for each amount of command arguments
-		switch (args.length) {
+		switch (this.args.length) {
 
 			// Player typed /sample and pressed tab, he is completing the first argument.
 			case 1:
-				return completeLastWord("example", "find", "actionbar");
+				return this.completeLastWord("example", "find", "actionbar");
 
 			// Player typed /sample SOMETHING and pressed tab, he might have typed /sample example,
 			// /sample find or /sample actionbar, either way, after that we complete all online player names.
 			case 2:
-				return completeLastWordPlayerNames();
+				return this.completeLastWordPlayerNames();
 		}
 
 		return NO_COMPLETE;
