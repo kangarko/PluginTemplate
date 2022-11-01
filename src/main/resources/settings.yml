@@ -48,7 +48,8 @@ Location_Format: "{world} [{x}, {y}, {z}]"
 # -------------------------------------------------------------------------------------------------
 # What commands should trigger the main plugin command group?
 #
-# * THE FIRST ALIAS IS THE MAIN LABEL, PLEASE DO NOT REMOVE IT. *
+# * THE FIRST ALIAS IS THE MAIN LABEL, YOU CAN CHANGE IT BUT DO NOT REMOVE IT. *
+# * EXAMPLE: [boss, b] will trigger your main command from "/boss" or "/b" * 
 # -------------------------------------------------------------------------------------------------
 Command_Aliases: [plugintemplate, template, plt]
 
