@@ -30,7 +30,9 @@ public final class SampleCommand extends SimpleCommand {
 		// localization/messages_en.yml resource file)
 		//this.setMinArguments(1);
 		this.setPermission(Permissions.Command.SAMPLE);
-
+		// Set the permission to null to allow the command for everyone
+		//this.setPermission(null);
+		
 		// Uncomment to get rid of the automatically generated help text: https://i.imgur.com/Q79RKN0.png
 		//this.setAutoHandleHelp(false);
 	}
@@ -74,12 +76,12 @@ public final class SampleCommand extends SimpleCommand {
 		// A shortcut for sending a message to the sender, note the use of placeholders and joinArgs to automatically join
 		// all command arguments with spaces such as /sample hello world will be joined to "hello world" from index 0,
 		// or simply "world" when you call joinArgs(1)
-		//tell("Executed command /{label} " + this.joinArgs(0));
+		//this.tell("Executed command /{label} " + this.joinArgs(0));
 
 		// You can access "args" array directly. However, checking and returning arguments like this is deprecated,
 		//
 		//if (args.length == 0)
-		//	returnTell("Please at least specify one command argument!");
+		//	this.returnTell("Please at least specify one command argument!");
 		//
 		// Rather, use one-liner that will do the same thing:
 		//this.checkArgs(1, "Please at least specify one command argument.");
@@ -96,7 +98,7 @@ public final class SampleCommand extends SimpleCommand {
 			this.checkArgs(2, "Please specify a player's name: /{label} {sublabel} <playerName>");
 
 			// This will automatically run the method inside if the offline player was found (even if he is offline)
-			// And if not, we automatically return with an error message, editable in localization/messages_en.yml
+			// And if not, we automatically return with an error message, editable in Localization (Player.Not_Played_Before)
 			this.findOfflinePlayer(this.args[1], target -> {
 				this.tell(target.getName() + " last joined " + TimeUtil.getFormattedDateShort(target.getLastPlayed()));
 			});
@@ -104,16 +106,20 @@ public final class SampleCommand extends SimpleCommand {
 		} else if ("actionbar".equals(param)) {
 			this.checkArgs(3, "Usage is: /{label} {sublabel} <playerName> [message]");
 
-			// Automatically finds an online player (BungeeCord is NOT supported here)
-			// If the player is not on this server, we automatically return with an error message,
-			// editable in localization/messages_en.yml
+			// Automatically finds an online player, if the player is not on the server, 
+			// we automatically return with an error message, editable in Localization (Player.Not_Online)
 			final Player target = this.findPlayer(this.args[1]);
-			final String message = Common.joinRange(2, this.args);
+			
+			// Get the entire message starting from the second argument.
+			// /sample actionbar <player> This is the message sent into actionbar
+			final String message = this.joinRange(2);
 
 			// Our compatibility library sends the action bar on Minecraft 1.8.8+ and as text on older MC.
 			Remain.sendActionBar(target, message);
 
 		} else
+			// If no subcommand of the above is fired, this will be executed,
+			// message is editable in Localization (Commands.Invalid_Argument)
 			this.returnInvalidArgs();
 	}
 
