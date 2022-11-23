@@ -39,6 +39,13 @@ public final class PluginTemplate extends SimplePlugin {
 		//
 	}
 
+	@Override
+	protected void onPluginPreReload() {
+
+		// Close your database here if you use one
+		//YourDatabase.getInstance().close();
+	}
+
 	/* ------------------------------------------------------------------------------- */
 	/* Events */
 	/* ------------------------------------------------------------------------------- */
