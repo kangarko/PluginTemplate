@@ -3,7 +3,6 @@ package org.mineacademy.template.command;
 import java.util.List;
 
 import org.bukkit.entity.Player;
-import org.mineacademy.fo.Common;
 import org.mineacademy.fo.TimeUtil;
 import org.mineacademy.fo.annotation.AutoRegister;
 import org.mineacademy.fo.command.SimpleCommand;
@@ -32,7 +31,7 @@ public final class SampleCommand extends SimpleCommand {
 		this.setPermission(Permissions.Command.SAMPLE);
 		// Set the permission to null to allow the command for everyone
 		//this.setPermission(null);
-		
+
 		// Uncomment to get rid of the automatically generated help text: https://i.imgur.com/Q79RKN0.png
 		//this.setAutoHandleHelp(false);
 	}
@@ -106,13 +105,13 @@ public final class SampleCommand extends SimpleCommand {
 		} else if ("actionbar".equals(param)) {
 			this.checkArgs(3, "Usage is: /{label} {sublabel} <playerName> [message]");
 
-			// Automatically finds an online player, if the player is not on the server, 
+			// Automatically finds an online player, if the player is not on the server,
 			// we automatically return with an error message, editable in Localization (Player.Not_Online)
 			final Player target = this.findPlayer(this.args[1]);
-			
+
 			// Get the entire message starting from the second argument.
 			// /sample actionbar <player> This is the message sent into actionbar
-			final String message = this.joinRange(2);
+			final String message = this.joinArgs(2);
 
 			// Our compatibility library sends the action bar on Minecraft 1.8.8+ and as text on older MC.
 			Remain.sendActionBar(target, message);
