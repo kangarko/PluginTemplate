@@ -56,14 +56,6 @@
 		</repository>
 	</repositories>
 	
-	<!-- Do NOT edit. -->
-	<pluginRepositories>
-		<pluginRepository>
-			<id>maven-snapshots</id>
-			<url>https://repository.apache.org/content/repositories/snapshots/</url>
-		</pluginRepository>
-	</pluginRepositories>
-	
 	<dependencies>
 		
 		<!-- (Optional) Access the server jar for NMS (groupId, artifactId and version do not matter,
@@ -102,7 +94,7 @@
 				
 				<!-- Change version to the latest one from
 					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
-				<version>3.2.2</version>
+				<version>3.3.0</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -120,9 +112,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
 				
-				<!-- We use latest snapshot here for modern Java compatibility. Change version to the latest one from
-					 https://repository.apache.org/content/repositories/snapshots/org/apache/maven/plugins/maven-shade-plugin/ -->
-				<version>3.3.1-SNAPSHOT</version>
+				<!-- Change version to the latest one from
+					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
+				<version>3.4.1</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
