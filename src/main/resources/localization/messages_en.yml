@@ -39,6 +39,7 @@ Commands:
   Reloading: "reloading"
   Disabled: "disabled"
   Use_While_Null: "&cCannot use this command while the plugin is {state}."
+  Cannot_Autodetect_World: "Only living players can use ~ for their world!"
   Incompatible: "This command requires Minecraft {0} or greater."
   Toggled_Plugin_Part: "'&7You are ' + (ignoring ? '&2no longer' : '&cnow') + ' &7ignoring {0}.'"
   Use_Alternative_Header: false
