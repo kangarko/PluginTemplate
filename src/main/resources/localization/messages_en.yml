@@ -36,6 +36,10 @@ Commands:
   Header_No_Subcommands_Permission: "&cYou don't have permissions to view any subcommands."
   Header_Color: GOLD
   Header_Secondary_Color: RED
+  Header_Format: "&r\n{theme_color}&m<center>&r{theme_color} {title} &m\n&r"
+  # Must be exactly one letter
+  Header_Center_Letter: "-"
+  Header_Center_Padding: 150
   Reloading: "reloading"
   Disabled: "disabled"
   Use_While_Null: "&cCannot use this command while the plugin is {state}."
