@@ -83,7 +83,7 @@ public final class SampleCommand extends SimpleCommand {
 		//	this.returnTell("Please at least specify one command argument!");
 		//
 		// Rather, use one-liner that will do the same thing:
-		//this.checkArgs(1, "Please at least specify one command argument.");
+		this.checkArgs(1, "Please at least specify one command argument.");
 
 		// We convert args[0] to lowerCase, so player can type small and large letters, command will be executed nevertheless. (+ we don't need to use equalsIgnoreCase method always)
 		final String param = this.args[0].toLowerCase();
