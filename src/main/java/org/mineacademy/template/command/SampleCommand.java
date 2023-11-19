@@ -28,8 +28,11 @@ public final class SampleCommand extends SimpleCommand {
 		// and returns with error message to the sender if not (you can edit the error message in
 		// localization/messages_en.yml resource file)
 		//this.setMinArguments(1);
+
+		// You can override the command permission here, by default it's {pluginName}.command.{label}
 		this.setPermission(Permissions.Command.SAMPLE);
-		// Set the permission to null to allow the command for everyone
+
+		// Or, set the permission to null to allow the command for everyone
 		//this.setPermission(null);
 
 		// Uncomment to get rid of the automatically generated help text: https://i.imgur.com/Q79RKN0.png
