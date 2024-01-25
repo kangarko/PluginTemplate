@@ -36,8 +36,7 @@ public final class Packets extends PacketListener {
 
 		// Receiving tab complete
 		this.addReceivingListener(ListenerPriority.HIGHEST, PacketType.Play.Client.TAB_COMPLETE, event -> {
-			final String buffer = event.getPacket().getStrings().read(0);
-
+			//final String buffer = event.getPacket().getStrings().read(0);
 			//Common.log("Received tab complete packet '" + buffer + "' to " + event.getPlayer().getName());
 		});
 
