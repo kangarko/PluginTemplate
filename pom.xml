@@ -102,7 +102,7 @@
 				
 				<!-- Change version to the latest one from
 					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-				<version>3.11.0</version>
+				<version>3.12.1</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
@@ -114,7 +114,7 @@
 				
 				<!-- Change version to the latest one from
 					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
-				<version>3.5.0</version>
+				<version>3.5.1</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
