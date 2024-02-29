@@ -39,7 +39,7 @@ Commands:
   Header_Format: "&r\n{theme_color}&m<center>&r{theme_color} {title} &m\n&r"
   # Must be exactly one letter
   Header_Center_Letter: "-"
-  Header_Center_Padding: 150
+  Header_Center_Padding: 120
   Reloading: "reloading"
   Disabled: "disabled"
   Use_While_Null: "&cCannot use this command while the plugin is {state}."
