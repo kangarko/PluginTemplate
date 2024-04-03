@@ -111,7 +111,7 @@
 				
 				<!-- Change version to the latest one from
 					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-				<version>3.12.1</version>
+				<version>3.13.0</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
