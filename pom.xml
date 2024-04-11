@@ -34,36 +34,22 @@
 	</properties>
 	
 	<repositories>
-		<!-- Repo to download Spigot API from -->
+		<!-- Repo to download Paper API from -->
 		<repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-        </repository>
-		<!-- Repo to download Paper API from, uncomment to use it. -->
-		<!--<repository>
 			<id>papermc</id>
 			<url>https://repo.papermc.io/repository/maven-public/</url>
-		</repository>-->
+		</repository>
 	</repositories>
 	
 	<dependencies>
-        <!-- Import Spigot API to code your plugin with. See the link below for more 
-             information: https://www.spigotmc.org/wiki/spigot-maven/ -->
-        <dependency>
-           <groupId>org.spigotmc</groupId>
-           <artifactId>spigot-api</artifactId>
-           <version>1.20.4-R0.1-SNAPSHOT</version>
-           <scope>provided</scope>
-        </dependency>
-        
-        <!-- Uncomment to use Paper API instead. You can then remove the above Spigot API. 
-             See this link for more info: https://github.com/PaperMC/Paper?tab=readme-ov-file#maven -->		
-		<!--<dependency>
+        <!-- Import Paper API to code your plugin with. See the link below for more 
+             https://github.com/PaperMC/Paper?tab=readme-ov-file#maven -->		
+		<dependency>
 			<groupId>io.papermc.paper</groupId>
 			<artifactId>paper-api</artifactId>
 			<version>1.20.4-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
-		</dependency>-->
+		</dependency>
 	</dependencies>
 	
 	<!-- DO NOT EDIT unless instructed to do so or you know what you're doing. -->
