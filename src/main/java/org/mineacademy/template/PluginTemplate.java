@@ -2,19 +2,21 @@ package org.mineacademy.template;
 
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * The main class of this plugin.
  */
-public final class PluginTemplate extends JavaPlugin {
+public final class PluginTemplate extends JavaPlugin implements Listener {
 
 	/**
 	 * Automatically called when the plugin starts or after /reload.
 	 */
 	@Override
 	public void onEnable() {
+		this.getServer().getPluginManager().registerEvents(this, this);
 	}
 
 	/**
