@@ -6,4 +6,4 @@
 </p>
 
 # PluginTemplate
-A bootstrap plugin to use when creating high-performance plugins with Foundation.
+A bootstrap plugin to use when creating high-performance plugins with Paper API.
