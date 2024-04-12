@@ -1,6 +1,8 @@
 package org.mineacademy.template;
 
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
@@ -38,8 +40,10 @@ public final class PluginTemplate extends JavaPlugin implements Listener {
 	 */
 	@EventHandler
 	public void onRightClick(PlayerInteractEntityEvent event) {
-		if (event.getRightClicked().getType() == EntityType.COW)
-			event.getRightClicked().getWorld().createExplosion(event.getRightClicked().getLocation(), 5);
+		Entity entity = event.getRightClicked();
+
+		if (entity.getType() == EntityType.COW)
+			entity.getWorld().createExplosion(entity.getLocation(), 5);
 	}
 
 	/* ------------------------------------------------------------------------------- */
