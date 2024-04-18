@@ -153,8 +153,12 @@ Tool:
 # -------------------------------------------------------------------------------------------------
 Cases:
   Second: second, seconds
-  Message: message, messages
-  Command: command, commands
+  Minute: minute, minutes
+  Hour: hour, hours
+  Day: day, days
+  Week: week, weeks
+  Month: month, months
+  Year: year, years
 
 # -------------------------------------------------------------------------------------------------
 # Different prefixes you can use by calling {prefix_<type>} such as {prefix_info}
