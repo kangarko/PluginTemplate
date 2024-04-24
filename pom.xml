@@ -1,163 +1,163 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	
-	<!-- Change to your own main package name. -->
-	<groupId>org.mineacademy</groupId>
-	
-	<!-- Change to your plugin name, must be lower cased and match your end package name. No spaces. -->
-	<artifactId>plugintemplate</artifactId>
-	
-	<!-- Change to your plugin's name. Can contain capital letters, but do NOT use spaces. -->
-	<name>PluginTemplate</name>
-	
-	<!-- Change to the appropriate plugin's version, starting at 1.0.0. -->
-	<version>1.0.0</version>
-	
-	<!-- DO NOT EDIT. -->
-	<packaging>jar</packaging>
-	
-	<properties>
-		
-		<!-- Change to your name or the main project author. -->
-		<author>kangarko</author>
-		
-		<!-- Change to the full path where your main plugin class is located. -->
-		<main.class>org.mineacademy.template.PluginTemplate</main.class>
-		
-		<!-- Change the Java version this plugin is built on.
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-			 IMPORTANT: For Java 8, version is "1.8", for Java 11+ it is only "11" or "17".
+    <!-- Change to your own main package name. -->
+    <groupId>org.mineacademy</groupId>
 
-			 If you use 1.8 then your plugin will work on newer versions, but if you
-			 use 17 then it will NOT load on servers with previous Java versions. 
-			 -->
-		<java.version>17</java.version>
-		
-		<!-- Change to the latest version from https://github.com/kangarko/Foundation/releases
-			 or change to "LATEST" if you downloaded Foundation to your disk and compiled it. -->
-		<foundation.version>LATEST</foundation.version>
-		
-		<!-- Leave on "com.github.kangarko" if you use Foundation from GitHub like most people,
-			 or change to "org.mineacademy" if you downloaded our library to your disk and compiled it. -->
-		<foundation.path>org.mineacademy</foundation.path>
-		
-		<!-- DO NOT EDIT. -->
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-	
-	<repositories>
-		<!-- DO NOT EDIT, used to download Foundation from GitHub using JitPack tool. -->
-		<repository>
-			<id>jitpack</id>
-			<url>https://jitpack.io</url>
-		</repository>
-		<repository>
-			<id>papermc</id>
-			<url>https://repo.papermc.io/repository/maven-public/</url>
-		</repository>
-	</repositories>
-	
-	<dependencies>
-		
-		<!-- (Optional) Access the server jar for NMS (groupId, artifactId and version do not matter,
-			 but keep the artifactId unique if using multiple NMS imports).
+    <!-- Change to your plugin name, must be lower cased and match your end package name. No spaces. -->
+    <artifactId>plugintemplate</artifactId>
 
-			 NB: Here, the <systemPath> is set to the "library" folder in your source folder (in the same
-				 parent directory where you have "target" we will look for patched_1.8.8.jar file -->
-		<!--<dependency>
-			<groupId>paper-server</groupId>
-			<artifactId>Paper-1.20</artifactId>
-			<version>1</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/library/patched_1.20.jar</systemPath>
-		</dependency>-->
-		
+    <!-- Change to your plugin's name. Can contain capital letters, but do NOT use spaces. -->
+    <name>PluginTemplate</name>
+
+    <!-- Change to the appropriate plugin's version, starting at 1.0.0. -->
+    <version>1.0.0</version>
+
+    <!-- DO NOT EDIT. -->
+    <packaging>jar</packaging>
+
+    <properties>
+
+        <!-- Change to your name or the main project author. -->
+        <author>kangarko</author>
+
+        <!-- Change to the full path where your main plugin class is located. -->
+        <main.class>org.mineacademy.template.PluginTemplate</main.class>
+
+        <!-- Change the Java version this plugin is built on.
+
+             IMPORTANT: For Java 8, version is "1.8", for Java 11+ it is only "11" or "17".
+
+             If you use 1.8 then your plugin will work on newer versions, but if you
+             use 17 then it will NOT load on servers with previous Java versions.
+             -->
+        <java.version>17</java.version>
+
+        <!-- Change to the latest version from https://github.com/kangarko/Foundation/releases
+             or change to "LATEST" if you downloaded Foundation to your disk and compiled it. -->
+        <foundation.version>LATEST</foundation.version>
+
+        <!-- Leave on "com.github.kangarko" if you use Foundation from GitHub like most people,
+             or change to "org.mineacademy" if you downloaded our library to your disk and compiled it. -->
+        <foundation.path>org.mineacademy</foundation.path>
+
+        <!-- DO NOT EDIT. -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <repositories>
+        <!-- DO NOT EDIT, used to download Foundation from GitHub using JitPack tool. -->
+        <repository>
+            <id>jitpack</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+
+        <!-- (Optional) Access the server jar for NMS (groupId, artifactId and version do not matter,
+             but keep the artifactId unique if using multiple NMS imports).
+
+             NB: Here, the <systemPath> is set to the "library" folder in your source folder (in the same
+                 parent directory where you have "target" we will look for patched_1.8.8.jar file -->
+        <!--<dependency>
+            <groupId>paper-server</groupId>
+            <artifactId>Paper-1.20</artifactId>
+            <version>1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/library/patched_1.20.jar</systemPath>
+        </dependency>-->
+
         <!-- No need to import Spigot/Paper API since Foundation includes latest Spigot API. If you need
             to code for another version or want to use Paper API, place it here (above Foundation) as per 
-            https://github.com/PaperMC/Paper?tab=readme-ov-file#maven -->		
-		<!--<dependency>
-			<groupId>io.papermc.paper</groupId>
-			<artifactId>paper-api</artifactId>
-			<version>1.20.4-R0.1-SNAPSHOT</version>
-		</dependency>-->
-		
-		<!-- The Foundation library. It contains the latest Spigot API and a ton of useful dependencies
-		     Please see the maven-shade-plugin below and configure inclusions properly otherwise
-		     your file will shade with all the dependencies resulting it crashes and huge file size. -->
-		<dependency>
-			<groupId>${foundation.path}</groupId>
-			<artifactId>Foundation</artifactId>
-			<version>${foundation.version}</version>
-		</dependency>
-	</dependencies>
-	
-	<!-- DO NOT EDIT unless instructed to do so or you know what you're doing. -->
-	<build>
-		<finalName>${project.name}-${project.version}</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				
-				<!-- Change version to the latest one from
-					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
-				<version>3.3.0</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				
-				<!-- Change version to the latest one from
-					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-				<version>3.13.0</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				
-				<!-- Change version to the latest one from
-					 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
-				<version>3.5.1</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<createDependencyReducedPom>false</createDependencyReducedPom>
-					<artifactSet>
-						<includes>
-							<!-- Important: This will ensure only Foundation is shaded to your jar. If you have
-							     other dependencies that should be compiled, duplicate this line for each. -->
-							<include>${foundation.path}:Foundation*</include>
-						</includes>
-					</artifactSet>
-					<relocations>
-						<!-- This moves Foundation into your own package in "lib" subpackage to prevent interference. -->
-						<relocation>
-							<pattern>org.mineacademy.fo</pattern>
-							<shadedPattern>${project.groupId}.${project.artifactId}.lib</shadedPattern>
-						</relocation>
-					</relocations>
-				</configuration>
-			</plugin>
-		</plugins>
-		
-		<!-- Replaces ${project.name} and other variables in src/main/resources. -->
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
-	</build>
+            https://github.com/PaperMC/Paper?tab=readme-ov-file#maven -->
+        <!--<dependency>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>1.20.4-R0.1-SNAPSHOT</version>
+        </dependency>-->
+
+        <!-- The Foundation library. It contains the latest Spigot API and a ton of useful dependencies
+             Please see the maven-shade-plugin below and configure inclusions properly otherwise
+             your file will shade with all the dependencies resulting it crashes and huge file size. -->
+        <dependency>
+            <groupId>${foundation.path}</groupId>
+            <artifactId>Foundation</artifactId>
+            <version>${foundation.version}</version>
+        </dependency>
+    </dependencies>
+
+    <!-- DO NOT EDIT unless instructed to do so or you know what you're doing. -->
+    <build>
+        <finalName>${project.name}-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+
+                <!-- Change version to the latest one from
+                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
+                <version>3.3.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+
+                <!-- Change version to the latest one from
+                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+                <version>3.13.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+
+                <!-- Change version to the latest one from
+                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
+                <version>3.5.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <artifactSet>
+                        <includes>
+                            <!-- Important: This will ensure only Foundation is shaded to your jar. If you have
+                                 other dependencies that should be compiled, duplicate this line for each. -->
+                            <include>${foundation.path}:Foundation*</include>
+                        </includes>
+                    </artifactSet>
+                    <relocations>
+                        <!-- This moves Foundation into your own package in "lib" subpackage to prevent interference. -->
+                        <relocation>
+                            <pattern>org.mineacademy.fo</pattern>
+                            <shadedPattern>${project.groupId}.${project.artifactId}.lib</shadedPattern>
+                        </relocation>
+                    </relocations>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <!-- Replaces ${project.name} and other variables in src/main/resources. -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
 </project>
