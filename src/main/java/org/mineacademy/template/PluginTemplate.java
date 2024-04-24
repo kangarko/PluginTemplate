@@ -3,6 +3,7 @@ package org.mineacademy.template;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.mineacademy.component.TextComponent;
 import org.mineacademy.fo.plugin.SimplePlugin;
 
 /**
@@ -19,6 +20,7 @@ public final class PluginTemplate extends SimplePlugin {
 	*/
 	@Override
 	protected void onPluginStart() {
+		TextComponent.main(new String[] {});
 	}
 
 	/**
@@ -57,7 +59,7 @@ public final class PluginTemplate extends SimplePlugin {
 	 * @param event
 	 */
 	@EventHandler
-	public void onRightClick(PlayerInteractEntityEvent event) {
+	public void onRightClick(final PlayerInteractEntityEvent event) {
 		if (event.getRightClicked().getType() == EntityType.COW)
 			event.getRightClicked().getWorld().createExplosion(event.getRightClicked().getLocation(), 5);
 	}
