@@ -3,7 +3,6 @@ package org.mineacademy.template;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
-import org.mineacademy.component.TextComponent;
 import org.mineacademy.fo.plugin.SimplePlugin;
 
 /**
@@ -20,7 +19,6 @@ public final class PluginTemplate extends SimplePlugin {
 	*/
 	@Override
 	protected void onPluginStart() {
-		TextComponent.main(new String[] {});
 	}
 
 	/**
