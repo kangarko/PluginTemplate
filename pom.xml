@@ -33,15 +33,15 @@
              If you use 1.8 then your plugin will work on newer versions, but if you
              use 17 then it will NOT load on servers with previous Java versions.
              -->
-        <java.version>17</java.version>
+        <java.version>1.8</java.version>
 
         <!-- Change to the latest version from https://github.com/kangarko/Foundation/releases
              or change to "LATEST" if you downloaded Foundation to your disk and compiled it. -->
-        <foundation.version>LATEST</foundation.version>
+        <foundation.version>6.7.5</foundation.version>
 
         <!-- Leave on "com.github.kangarko" if you use Foundation from GitHub like most people,
              or change to "org.mineacademy" if you downloaded our library to your disk and compiled it. -->
-        <foundation.path>org.mineacademy</foundation.path>
+        <foundation.path>com.github.kangarko</foundation.path>
 
         <!-- DO NOT EDIT. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
