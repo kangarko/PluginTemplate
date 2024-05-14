@@ -87,6 +87,8 @@ Commands:
   Perms_Applied: "&7Do you have it? "
   Perms_Yes: "&2yes"
   Perms_No: "&cno"
+  Region_Set_Primary: "Set the primary region point."
+  Region_Set_Secondary: "Set the secondary region point."
 
 # -------------------------------------------------------------------------------------------------
 # Messages related to paginator splitting command help into multiple pages
