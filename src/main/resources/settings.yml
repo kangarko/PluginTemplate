@@ -39,11 +39,15 @@ Example:
   Sample_Flag: true
 
 # -------------------------------------------------------------------------------------------------
-# The formats used in the {timestamp} and {location} variables. For help with timestamp, see:
+# The formats used in the {date}, {date_short}, {date_month} and {location}. 
+#
+# See the link below to learn how to edit the date format:
 # https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
 # -------------------------------------------------------------------------------------------------
-Timestamp_Format: "dd.MM.yyyy HH:mm:ss"
-Location_Format: "{world} [{x}, {y}, {z}]"
+Date_Format: "dd.MM.yyyy HH:mm:ss"
+Date_Format_Short: "dd.MM.yyyy HH:mm"
+Date_Format_Month: "dd.MM HH:mm"
+Location_Format: "{world} {x}, {y}, {z}"
 
 # -------------------------------------------------------------------------------------------------
 # What commands should trigger the main plugin command group?
