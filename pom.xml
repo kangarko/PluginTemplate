@@ -37,7 +37,7 @@
 
         <!-- Change to the latest version from https://github.com/kangarko/Foundation/releases
              or change to "LATEST" if you downloaded Foundation to your disk and compiled it. -->
-        <foundation.version>6.8.1</foundation.version>
+        <foundation.version>6.8.2</foundation.version>
 
         <!-- Leave on "com.github.kangarko" if you use Foundation from GitHub like most people,
              or change to "org.mineacademy" if you downloaded our library to your disk and compiled it. -->
@@ -103,7 +103,7 @@
 
                 <!-- Change version to the latest one from
                      https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
-                <version>3.3.0</version>
+                <version>3.4.1</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -122,8 +122,11 @@
                 <artifactId>maven-shade-plugin</artifactId>
 
                 <!-- Change version to the latest one from
-                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
-                <version>3.5.1</version>
+                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin 
+					 
+					 NOTICE: If using Jitpack and experiencing build failure, try downgrading to 3.5.1.
+					 -->
+                <version>3.6.0</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
