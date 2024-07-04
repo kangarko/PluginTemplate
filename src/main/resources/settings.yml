@@ -67,7 +67,7 @@ Locale: en
 # The prefix used in front of most chat or console messages. You can manually use it with
 # {plugin_prefix} variable anywhere.
 # -------------------------------------------------------------------------------------------------
-Prefix: "&8[&c${project.name}&8]&7 "
+Prefix: "&8[&c${project.name}&8]&7"
 
 # -------------------------------------------------------------------------------------------------
 # Time of some plugin's operations is measured. You can also use the LagCatcher class to invoke
