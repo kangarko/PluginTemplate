@@ -46,7 +46,6 @@ Commands:
   Use_Alternative_Header: false
   Alternative_Header: "&c{plugin_name}: &7Type '/{0} ?' to see all commands."
   No_Console: "&cYou may only use this command as a player."
-  No_BungeeCord: "You need BungeeCord enabled use this feature."
   Console_Missing_Player_Name: "When running from console, specify player name."
   Cooldown_Wait: "&cWait {duration} second(s) before using this command again."
   Invalid_Argument: "&cInvalid argument. Run &6/{label} ? &cfor help."

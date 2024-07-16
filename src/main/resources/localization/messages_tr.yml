@@ -50,7 +50,6 @@ Commands:
   Use_Alternative_Header: false
   Alternative_Header: "&c{plugin_name}: &7Tüm komutları görmek için '/{0} ?' yazın."
   No_Console: "&cBu komutu sadece bir oyuncu olarak kullanabilirsiniz."
-  No_BungeeCord: "Bu özelliği kullanmak için BungeeCord etkinleştirilmiş olmalıdır."
   Console_Missing_Player_Name: "Konsoldan çalıştırırken oyuncu adı belirtmelisiniz."
   Cooldown_Wait: "&Bu komutu tekrar kullanmadan önce {duration} saniye beklemelisiniz."
   Invalid_Argument: "&cGeçersiz argüman. Yardım için &6/{label} ? &c komutunu kullanabilirsiniz."
