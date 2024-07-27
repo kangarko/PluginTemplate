@@ -53,10 +53,6 @@
             <id>jitpack</id>
             <url>https://jitpack.io</url>
         </repository>
-        <repository>
-            <id>papermc</id>
-            <url>https://repo.papermc.io/repository/maven-public/</url>
-        </repository>
     </repositories>
 
     <dependencies>
@@ -68,10 +64,10 @@
                  parent directory where you have "target" we will look for patched_1.8.8.jar file -->
         <!--<dependency>
             <groupId>paper-server</groupId>
-            <artifactId>Paper-1.20</artifactId>
+            <artifactId>Paper-1.21</artifactId>
             <version>1</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/library/patched_1.20.jar</systemPath>
+            <systemPath>${project.basedir}/library/patched_1.21.jar</systemPath>
         </dependency>-->
 
         <!-- No need to import Spigot/Paper API since Foundation includes latest Spigot API. If you need
@@ -80,7 +76,7 @@
         <!--<dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.20.6-R0.1-SNAPSHOT</version>
+            <version>1.21-R0.1-SNAPSHOT</version>
         </dependency>-->
 
         <!-- The Foundation library. It contains the latest Spigot API and a ton of useful dependencies
