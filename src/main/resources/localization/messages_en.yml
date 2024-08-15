@@ -29,8 +29,8 @@
 # -------------------------------------------------------------------------------------------------
 Commands: 
   Error: "&4&lOups! &cThe command failed :( Check the console and report the error."
-  Header_No_Subcommands: "&cThere are no arguments for this command."
-  Header_No_Subcommands_Permission: "&cYou don't have permissions to view any subcommands."
+  Header_No_Subcommands: "There are no arguments for this command."
+  Header_No_Subcommands_Permission: "You don't have permissions to view any subcommands."
   Header_Color: GOLD
   Header_Secondary_Color: RED
   Header_Format: "&r\n{theme_color}&m<center>&r{theme_color} {title} &m\n&r"
@@ -39,22 +39,23 @@ Commands:
   Header_Center_Padding: 120
   Reloading: "reloading"
   Disabled: "disabled"
-  Use_While_Null: "&cCannot use this command while the plugin is {state}."
+  Use_While_Null: "Cannot use this command while the plugin is {state}."
   Cannot_Autodetect_World: "Only living players can use ~ for their world!"
   Incompatible: "This command requires Minecraft {0} or greater."
   Toggled_Plugin_Part: "'&7You are ' + (ignoring ? '&2no longer' : '&cnow') + ' &7ignoring {0}.'"
   Use_Alternative_Header: false
   Alternative_Header: "&c{plugin_name}: &7Type '/{0} ?' to see all commands."
-  No_Console: "&cYou may only use this command as a player."
+  No_Console: "You may only use this command as a player."
   Console_Missing_Player_Name: "When running from console, specify player name."
-  Cooldown_Wait: "&cWait {duration} second(s) before using this command again."
-  Invalid_Argument: "&cInvalid argument. Run &6/{label} ? &cfor help."
-  Invalid_Sub_Argument: "&cInvalid argument. Run '/{label} {0}' for help."
-  Invalid_Argument_Multiline: "&cInvalid argument. Usage:"
+  Cooldown_Wait: "Wait {duration} second(s) before using this command again."
+  Invalid_Argument: "Invalid argument. Run &6/{label} ? &cfor help."
+  Invalid_Sub_Argument: "Invalid argument. Run '/{label} {0}' for help."
+  Invalid_Argument_Multiline: "Invalid argument. Usage:"
   Invalid_Time: "Expected time such as '3 hours' or '15 minutes', got: '{input}'"
   Invalid_Number: "The number must be a whole or a decimal number. Got: '{input}'"
-  Invalid_String: "&cInvalid string. Got: '{input}&c'"
+  Invalid_String: "Invalid string. Got: '{input}&c'"
   Invalid_World: "Invalid world '{world}'. Available: {available}"
+  Invalid_UUID: "Invalid UUID '{uuid}'"
   Label_Authors: "Made by"
   Label_Description: "&c&lDescription:"
   Label_Optional_Args: "optional arguments"
@@ -73,8 +74,8 @@ Commands:
   Debug_Description: "ZIP your settings for reporting bugs."
   Debug_Preparing: "&6Preparing debug log..."
   Debug_Success: "&2Successfuly copied {amount} file(s) to debug.zip. Your sensitive MySQL information has been removed from yml files. Please upload it via ufile.io and send it to us for review."
-  Debug_Copy_Fail: "&cCopying files failed on file {file} and it was stopped. See console for more information."
-  Debug_Zip_Fail: "&cCreating a ZIP of your files failed, see console for more information. Please ZIP debug/ folder and send it to us via ufile.io manually."
+  Debug_Copy_Fail: "Copying files failed on file {file} and it was stopped. See console for more information."
+  Debug_Zip_Fail: "Creating a ZIP of your files failed, see console for more information. Please ZIP debug/ folder and send it to us via ufile.io manually."
   Perms_Description: "List all permissions the plugin has."
   Perms_Usage: 
   Perms_Header: "Listing All Plugin Permissions"
@@ -93,31 +94,31 @@ Commands:
 # Messages related to paginator splitting command help into multiple pages
 # -------------------------------------------------------------------------------------------------
 Pages:
-  No_Page_Number: "&cPlease specify the page number for this command."
-  No_Pages: "&cYou do not have any pages saved to show."
+  No_Page_Number: "Please specify the page number for this command."
+  No_Pages: "You do not have any pages saved to show."
   No_Page: "Pages do not contain the given page number."
-  Invalid_Page: "&cYour input '{input}' is not a valid number."
+  Invalid_Page: "Your input '{input}' is not a valid number."
   Go_To_Page: "&7Go to page {page}"
   Go_To_First_Page: "&7Go to the first page"
   Tooltip:
-  - "&7You can also navigate using the"
-  - "&7hidden '/#flp <page> command.'"
+  - "You can also navigate using the"
+  - "hidden '/#flp <page> command.'"
   
 # -------------------------------------------------------------------------------------------------
 # Messages related to players
 # -------------------------------------------------------------------------------------------------
 Player: 
-  Not_Online: "&cPlayer {player} &cis not online on this server."
-  Not_Played_Before: "&cPlayer {player} &chas not played before or we could not locate his disk data."
-  Invalid_UUID: "&cCould not find a player from UUID {uuid}."
+  Not_Online: "Player {player} &cis not online on this server."
+  Not_Played_Before: "Player {player} &chas not played before or we could not locate his disk data."
+  Invalid_UUID: "Could not find a player from UUID {uuid}."
   
 # -------------------------------------------------------------------------------------------------
 # Messages related to menus
 # -------------------------------------------------------------------------------------------------
 Menu:
-  Cannot_Open_During_Conversation: "&cType 'exit' to quit your conversation before opening menu."
+  Cannot_Open_During_Conversation: "Type 'exit' to quit your conversation before opening menu."
   Item_Deleted: "&2The {item} has been deleted."
-  Error: "&cOups! There was a problem with this menu! Please contact the administrator to review the console for details."
+  Error: "Oups! There was a problem with this menu! Please contact the administrator to review the console for details."
   Page_Previous: "&8<< &fPage {page}"
   Page_Next: "Page {page} &8>>"
   Page_First: "&7First Page"
@@ -133,9 +134,9 @@ Menu:
 # Messages related to player conversation where server is waiting for his chat input
 # -------------------------------------------------------------------------------------------------
 Conversation:
-  Not_Conversing: "&cYou can only use this command when you are asked to type something in the chat."
+  Not_Conversing: "You can only use this command when you are asked to type something in the chat."
   Requires_Player: "Only players may enter this conversation."
-  Error: "&cOups! There was a problem in this conversation! Please contact the administrator to review the console for details."
+  Error: "Oups! There was a problem in this conversation! Please contact the administrator to review the console for details."
   Conversation_Cancelled: "Your pending chat answer has been canceled."
   Conversation_Cancelled_Inactive: "Your pending chat answer has been canceled because you were inactive."
 
@@ -143,7 +144,7 @@ Conversation:
 # Messages related to tools
 # -------------------------------------------------------------------------------------------------
 Tool:
-  Error: "&cOups! There was a problem with this tool! Please contact the administrator to review the console for details."
+  Error: "Oups! There was a problem with this tool! Please contact the administrator to review the console for details."
 
 # -------------------------------------------------------------------------------------------------
 # Words for both singular and plural form. Separate these two forms with ", "
@@ -178,13 +179,13 @@ Console_Name: "Console"
 # -------------------------------------------------------------------------------------------------
 # Database related messages
 # -------------------------------------------------------------------------------------------------
-Data_Missing: "&c{name} lacks database information! Please only create {type} in-game! Skipping.."
+Data_Missing: "{name} lacks database information! Please only create {type} in-game! Skipping.."
 Data_Loading: "Database is currently loading data, please wait..."
 
 # -------------------------------------------------------------------------------------------------
 # Messages shown when player runs a command he lacks permission for
 # -------------------------------------------------------------------------------------------------
-No_Permission: "&cNo permission: {permission}" 
+No_Permission: "No permission: {permission}" 
 
 # -------------------------------------------------------------------------------------------------
 # Internal versioning number
