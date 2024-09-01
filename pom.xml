@@ -28,20 +28,21 @@
 
         <!-- Change the Java version this plugin is built on.
 
-             IMPORTANT: For Java 8, version is "1.8", for Java 11+ it is only "11" or "17".
+             IMPORTANT: For Java 8, version is "1.8", for Java 11+ it is "11" or "17".
 
              If you use 1.8 then your plugin will work on newer versions, but if you
              use 17 then it will NOT load on servers with previous Java versions.
              -->
-        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
 
         <!-- Change to the latest version from https://github.com/kangarko/Foundation/releases
              or change to "LATEST" if you downloaded Foundation to your disk and compiled it. -->
-        <foundation.version>6.9.1</foundation.version>
+        <foundation.version>LATEST</foundation.version>
 
         <!-- Leave on "com.github.kangarko" if you use Foundation from GitHub like most people,
              or change to "org.mineacademy" if you downloaded our library to your disk and compiled it. -->
-        <foundation.path>com.github.kangarko</foundation.path>
+        <foundation.path>org.mineacademy</foundation.path>
 
         <!-- DO NOT EDIT. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -99,7 +100,7 @@
 
                 <!-- Change version to the latest one from
                      https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
-                <version>3.4.1</version>
+                <version>3.4.2</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -108,10 +109,6 @@
                 <!-- Change version to the latest one from
                      https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
                 <version>3.13.0</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
