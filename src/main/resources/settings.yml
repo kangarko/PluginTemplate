@@ -65,7 +65,7 @@ Locale: en
 
 # -------------------------------------------------------------------------------------------------
 # The prefix used in front of most chat or console messages. You can manually use it with
-# {plugin_prefix} variable anywhere.
+# {prefix_plugin} variable anywhere.
 # -------------------------------------------------------------------------------------------------
 Prefix: "&8[&c${project.name}&8]&7"
 
