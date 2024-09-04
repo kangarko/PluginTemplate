@@ -47,6 +47,6 @@ public final class ${NAME} extends MenuPagged<${Class_To_List}> {
      */
     @Override
     protected void onPageClick(Player player, ${Class_To_List} item, ClickType click) {
-        animateTitle("Clicked on " + ItemUtil.bountifyCapitalized(item));
+        animateTitle("Clicked on " + ItemUtil.bountify(item));
     }
 }
