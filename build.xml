@@ -1,39 +1,13 @@
 <?xml version="1.0" ?>
-<!DOCTYPE xml>
 <project name="PluginTemplate" default="Build">
-
-	<!-- We use this file to compile your plugin to your plugins/ directory
-	     automatically and use the hot swap (also known as live debug) feature.
-		     
-	     It does not support dependencies easily so the only dependency
-	     we include here is Foundation. It cannot change Foundation's packages
-	     so you can only debug one plugin at a time to avoid conflicts. -->
-		
-		<!-- Ninja: We read pom.xml file to find the Foundation version to use -->
-		<xmlproperty file="pom.xml" prefix="pom" keeproot="false" />
-		<property name="foundation.version" value="${pom.properties.foundation.version}"/>
-		
-		<!-- Change the name="" key on the top to your plugin's name 
-		     and edit the path below to where your server is located.
-		     
-		     You can simply duplicate the <jar>...</jar> section
-		     to compile your plugin to multiple servers. -->
-
-		<target name="Build">
-	    	<jar jarfile="/Users/kangarko/Test Servers/1.21/plugins/${ant.project.name}.jar" basedir="./target/classes/" includes="**/*">
-
-	    		<!-- IF you have Foundation on your disk, remove the <zipgroupfileset> line and uncomment the <fileset> one. Repeat for the other <jar> goal below.
-	    			 Foundation then needs to be in the same parent's folder as your plugin's source, such as workspace/Foundation and workspace/YourPlugin -->
-
-	    		<zipgroupfileset dir="${user.home}/.m2/repository/com/github/kangarko/Foundation/${foundation.version}/" includes="**/*${foundation.version}.jar" />
-	    		<!--<fileset dir="../Foundation/target/classes"/>-->
-	        </jar>
-			
-	    	<!-- You can copy the <jar> block above multiple times if you have multi-version testing servers -->
-	    	<jar jarfile="/Users/kangarko/Test Servers/1.8.8/plugins/${ant.project.name}.jar" basedir="./target/classes/" includes="**/*">
-	    		<zipgroupfileset dir="${user.home}/.m2/repository/com/github/kangarko/Foundation/${foundation.version}/" includes="**/*${foundation.version}.jar" />
-	    		<!--<fileset dir="../Foundation/target/classes"/>-->
-	        </jar>
-		</target>
-
-</project> 
+	<target name="Build">
+		<!--<jar jarfile="/Users/kangarko/Test Servers/1.8.8/plugins/${ant.project.name}.jar" basedir="./target/classes/" includes="**/*">
+			<fileset dir="../Foundation/foundation-bukkit/target/classes" />
+			<fileset dir="../Foundation/foundation-core/target/classes" />
+		</jar>-->
+		<jar jarfile="/Users/kangarko/Test Servers/1.21/plugins/${ant.project.name}.jar" basedir="./target/classes/" includes="**/*">
+			<fileset dir="../Foundation/foundation-bukkit/target/classes" />
+			<fileset dir="../Foundation/foundation-core/target/classes" />
+		</jar>
+	</target>
+</project>

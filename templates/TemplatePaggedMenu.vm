@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
 import org.mineacademy.fo.ItemUtil;
-import org.mineacademy.fo.menu.MenuPagged;
+import org.mineacademy.fo.menu.MenuPaged;
 import org.mineacademy.fo.remain.CompMonsterEgg;
 
 import java.util.Arrays;
@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * A sample pagged menu listing different items of the given type.
  */
-public final class ${NAME} extends MenuPagged<${Class_To_List}> {
+public final class ${NAME} extends MenuPaged<${Class_To_List}> {
 
     /*
      * Create a new instance of this menu that will automatically load
