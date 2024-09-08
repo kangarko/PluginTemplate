@@ -3,7 +3,7 @@ package org.mineacademy.template;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
-import org.mineacademy.fo.plugin.SimplePlugin;
+import org.mineacademy.fo.platform.SimplePlugin;
 
 /**
  * PluginTemplate is a simple template you can use every time you make
@@ -19,14 +19,6 @@ public final class PluginTemplate extends SimplePlugin {
 	*/
 	@Override
 	protected void onPluginStart() {
-	}
-
-	/**
-	 * Automatically perform login when the plugin starts and each time it is reloaded.
-	 */
-	@Override
-	protected void onReloadablesStart() {
-
 		// You can check for necessary plugins and disable loading if they are missing
 		//Valid.checkBoolean(HookManager.isVaultLoaded(), "You need to install Vault so that we can work with packets, offline player data, prefixes and groups.");
 
@@ -62,9 +54,9 @@ public final class PluginTemplate extends SimplePlugin {
 			event.getRightClicked().getWorld().createExplosion(event.getRightClicked().getLocation(), 5);
 	}
 
-	/* ------------------------------------------------------------------------------- */
-	/* Static */
-	/* ------------------------------------------------------------------------------- */
+	// ------------------------------------------------------------------------------------------------------------
+	// Static
+	// ------------------------------------------------------------------------------------------------------------
 
 	/**
 	 * Return the instance of this plugin, which simply refers to a static
