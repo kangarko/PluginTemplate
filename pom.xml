@@ -85,7 +85,7 @@
              your file will shade with all the dependencies resulting it crashes and huge file size. -->
         <dependency>
             <groupId>${foundation.path}</groupId>
-            <artifactId>Foundation</artifactId>
+            <artifactId>foundation-bukkit</artifactId>
             <version>${foundation.version}</version>
         </dependency>
     </dependencies>

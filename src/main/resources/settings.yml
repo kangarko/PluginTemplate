@@ -39,17 +39,6 @@ Example:
   Sample_Flag: true
 
 # -------------------------------------------------------------------------------------------------
-# The formats used in the {date}, {date_short}, {date_month} and {location}. 
-#
-# See the link below to learn how to edit the date format:
-# https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
-# -------------------------------------------------------------------------------------------------
-Date_Format: "dd.MM.yyyy HH:mm:ss"
-Date_Format_Short: "dd.MM.yyyy HH:mm"
-Date_Format_Month: "dd.MM HH:mm"
-Location_Format: "{world} {x}, {y}, {z}"
-
-# -------------------------------------------------------------------------------------------------
 # What commands should trigger the main plugin command group?
 #
 # * THE FIRST ALIAS IS THE MAIN LABEL, YOU CAN CHANGE IT BUT DO NOT REMOVE IT. *
@@ -81,9 +70,3 @@ Log_Lag_Over_Milis: 100
 # The Debugger class utilizes this key and will only print messages for sections enabled below.
 # -------------------------------------------------------------------------------------------------
 Debug: []
-
-# -------------------------------------------------------------------------------------------------
-# Do not change this value, otherwise it will corrupt your plugin installation!
-# NB: Don't forget to keep this up-to-date with the getConfigVersion method in your Settings class. 
-# -------------------------------------------------------------------------------------------------
-Version: 1
