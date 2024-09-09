@@ -1,0 +1,189 @@
+# !-----------------------------------------------------------------------------------------------!
+#                              Lokalizasyon dosyasına hoşgeldiniz.
+# !-----------------------------------------------------------------------------------------------!
+#
+#   localization/ klasörü çeşitli lokalizasyon dosyalarını depolar. Önerlien adlandırma
+#   kuralı messages_DİL.yml şeklindedir ve sonra bu dosyayı kullanmak için
+#   “SimpleLocalization” veya “Lang” sınıfını kullanın.
+#
+#   1) RENK KODLARI '&' karakteri ile desteklenir durumda.
+#      - Kullanım için bkz. http://minecraftwiki.net/wiki/Formatting_codes
+#      - Bunları kullandığınızda, mesajın etrafına aşağıdaki gibi tırnak işareti koymalısınız: “Merhaba &cdünya.”
+#      - HEX renklerini kullanmak için #123456 sözdizimini kullanabilirsiniz: “Merhaba #123456dünya.”
+#
+#   2) Herhangi bir mesajı GİZLEMEK için 'none' olarak ayarlayın.
+#
+#   3) UNICODE KARAKTERLER (suratlar, semboller, ..) için dosyayı UTF-8 kodlamasında kaydedin. Bkz.
+#      - https://github.com/${author}/${project.name}/wiki/Use-Right-Encoding
+#
+#   4) JSON desteklenmektedir. Kullanmak için iletinin önüne [JSON] ekleyebilirsiniz.
+#
+#   5) JAVASCRIPT UYARISI: Bazı mesajlarımız JavaScript ile tam zamanında derlenmiştir.
+#      Bunların içinde genellikle “self” gibi değişkenler bulunur. EĞER JAVASCRIPT'LE 
+#      KODLAYAMIYORSANIZ, ekstra dikkatli olun ve () parantezlerini veya değişkenleri
+#      kaldırmayın!
+#
+# !-----------------------------------------------------------------------------------------------!
+
+# -------------------------------------------------------------------------------------------------
+# Komutlarla ilgili mesajlar
+# -------------------------------------------------------------------------------------------------
+Commands: 
+  # true = https://i.imgur.com/us88BCT.png
+  # false = https://i.imgur.com/N7jLu7v.png
+  Simple_Help_Design: false
+  Error: "&4&lUps! &cKomut başarısız oldu :( Konsolu kontrol edebilir ve hatayı bildirebilirsiniz."
+  Header_No_Subcommands: "&cBu komut için herhangi bir argüman yok."
+  Header_No_Subcommands_Permission: "&cHerhangi bir alt komutu görüntüleme izniniz yok."
+  Header_Color: GOLD
+  Header_Secondary_Color: RED
+  Header_Format: "&r\n{theme_color}&m<center>&r{theme_color} {title} &m\n&r"
+  # Tam olarak bir harf olmalıdır
+  Header_Center_Letter: "-"
+  Header_Center_Padding: 120
+  Reloading: "yeniden yükleniyor"
+  Disabled: "devre dışı bırakıldı"
+  Use_While_Null: "&cEklenti {state} durumundayken bu komut kullanılamaz."
+  Cannot_Autodetect_World: "Sadece yaşayan oyuncular kendi dünyaları için ~ kullanabilir!"
+  Incompatible: "Bu komut için Minecraft {0} veya üstünü kullanıyor olmanız gerekiyor."
+  Toggled_Plugin_Part: "'&7{0} artık görmezden' + (ignoring ? '&2gelinmiyor' : '&cgeliniyor')"
+  Use_Alternative_Header: false
+  Alternative_Header: "&c{plugin_name}: &7Tüm komutları görmek için '/{0} ?' yazın."
+  No_Console: "&cBu komutu sadece bir oyuncu olarak kullanabilirsiniz."
+  No_BungeeCord: "Bu özelliği kullanmak için BungeeCord etkinleştirilmiş olmalıdır."
+  Console_Missing_Player_Name: "Konsoldan çalıştırırken oyuncu adı belirtmelisiniz."
+  Cooldown_Wait: "&Bu komutu tekrar kullanmadan önce {duration} saniye beklemelisiniz."
+  Invalid_Argument: "&cGeçersiz argüman. Yardım için &6/{label} ? &c komutunu kullanabilirsiniz."
+  Invalid_Sub_Argument: "&cGeçersiz argüman. Yardım için '/{label} {0}' komutunu kullanabilirsiniz."
+  Invalid_Argument_Multiline: "&cGeçersiz argüman. Doğru kullanım:"
+  Invalid_Time: "'3 saat' veya '15 dakika' gibi geçerli bir zaman aralığı girmelisiniz. Girilen değer: '{input}'"
+  Invalid_Number: "Sayı tam veya ondalık sayı olmalıdır. Girilen değer: '{input}'"
+  Invalid_String: "&cGeçersiz dizi. Girilen değer: '{input}&c'"
+  Invalid_World: "Geçersiz dünya ismi: '{world}'. Kullanılabilir dünyalar: {available}"
+  Label_Authors: "Yapımcı: "
+  Label_Description: "&c&lAçıklama:"
+  Label_Optional_Args: "isteğe bağlı argümanlar"
+  Label_Required_Args: "gerekli argümanlar"
+  Label_Usages: "&c&lDoğru kullanımları:"
+  Label_Usage: "&c&lDoğru kullanımı:"
+  Label_Help_For: "Yardım almak için /{label} komutunu kullanabilirsiniz."
+  Label_Subcommand_Description: " &f/{label} {sublabel} {usage+}{dash+}{description}"
+  Help_Tooltip_Description: "&7Açıklama: &f{description}"
+  Help_Tooltip_Permission: "&7Gerekli yetki: &f{permission}"
+  Help_Tooltip_Usage: "&7Doğru kullanımı: &f"
+  Reload_Description: "Konfigürasyonu yeniden yükleyin."
+  Reload_Started: "Eklentinin verileri yeniden yükleniyor, lütfen bekleyin..."
+  Reload_Success: "&6{plugin_name} {plugin_version} yeniden yüklendi."
+  Reload_Fail: "&4Ups, &cyeniden yükleme başarısız oldu! Daha fazla bilgi için konsola bakabilirsiniz. Hata: {error}"
+  Reload_File_Load_Error: "&4Ups, &cdiskinizden dosyaları yüklerken bir sorun oluştu! Daha fazla bilgi için konsola bakabilirsiniz. {plugin_name} yeniden yüklenmedi."
+  Debug_Description: "Hataları raporlamak için ayarlarınızı ZIP dosyasına koyabilirsiniz."
+  Debug_Preparing: "&6Hata ayıklama günlüğü hazırlanıyor..."
+  Debug_Success: "&2Başarılı bir şekilde {amount} dosya(lar) debug.zip'e kopyalandı. Hassas MySQL bilgileriniz yml dosyalarından kaldırıldı. ufile.io üzerinden dosyalarınızı yükleyip bize incelememiz için gönderebilirsiniz"
+  Debug_Copy_Fail: "&cDosya kopyalama işlemi {file} dosyasında başarısız oldu ve durduruldu. Daha fazla bilgi için konsola bakabilirsiniz."
+  Debug_Zip_Fail: "&cDosyalarınızın ZIP'ini oluşturma başarısız oldu, daha fazla bilgi için konsola bakabilirsiniz. debug/ klasörünüzü ZIP haline getirip bize ufile.io üzerinden manuel olarak gönderebilirsiniz."
+  Perms_Description: "Eklentinin sahip olduğu tüm izinleri listeleyin."
+  Perms_Usage: 
+  Perms_Header: "Tüm Eklenti İzinleri Listeleniyor..."
+  Perms_Main: "Ana Yetki"
+  Perms_Permissions: "Yetkiler:"
+  Perms_True_By_Default: "&7[varsayılan olarak açık]"
+  Perms_Info: "&7Bilgi: &f"
+  Perms_Default: "&7Varsayılan? "
+  Perms_Applied: "&7Buna sahip misiniz? "
+  Perms_Yes: "&2evet"
+  Perms_No: "&chayır"
+
+# -------------------------------------------------------------------------------------------------
+# Sayfalayıcının komut yardımını birden fazla sayfaya bölmesiyle ilgili mesajlar
+# -------------------------------------------------------------------------------------------------
+Pages:
+  No_Page_Number: "&cLütfen bu komut için sayfa numarasını belirtin."
+  No_Pages: "&cGöstermek için kaydedilmiş herhangi bir sayfanız yok."
+  No_Page: "Sayfalar verilen sayfa numarasını içermiyor."
+  Invalid_Page: "&c'{input}' girdiniz geçerli bir sayı değil."
+  Go_To_Page: "&7Sayfa {page}'ya git"
+  Go_To_First_Page: "&7İlk sayfaya git"
+  Tooltip:
+  - "&7Ayrıca gizli '/#flp <sayfa> komutunu"
+  - "&7kullanarak da gezinebilirsiniz.'"
+  
+# -------------------------------------------------------------------------------------------------
+# Oyuncularla ilgili mesajlar
+# -------------------------------------------------------------------------------------------------
+Player: 
+  Not_Online: "&c{player} &cbu sunucuda şuanda aktif değil."
+  Not_Played_Before: "&c{player} &cdaha önce oynamadı veya disk verilerini bulamadık."
+  Invalid_UUID: "&c{uuid}'den bir oyuncu bulunamadı."
+  
+# -------------------------------------------------------------------------------------------------
+# Menülerle ilgili mesajlar
+# -------------------------------------------------------------------------------------------------
+Menu:
+  Cannot_Open_During_Conversation: "&cMenüyü açmadan önce görüşmenizden çıkmak için 'exit' yazın."
+  Item_Deleted: "&2{item} başarıyla silindi."
+  Error: "&cUps! Bu menü ile ilgili bir sorun oluştu! Ayrıntılar için konsolu incelemek üzere lütfen yöneticiyle iletişime geçin."
+  Page_Previous: "&8<< &fSayfa {page}"
+  Page_Next: "Sayfa {page} &8>>"
+  Page_First: "&7İlk Sayfa"
+  Page_Last: "&7Son Sayfa"
+  Title_Tools: "Araçlar Menüsü"
+  Tooltip_Info: "&fMenü Bilgileri"
+  Button_Return_Title: "&4&lDön"
+  Button_Return_Lore:
+  - ""
+  - "Geri dön."
+
+# -------------------------------------------------------------------------------------------------
+# Sunucunun sohbet girdisini beklediği oyuncu konuşmasıyla ilgili mesajlar
+# -------------------------------------------------------------------------------------------------
+Conversation:
+  Not_Conversing: "&cBu komutu yalnızca sohbette bir şey yazmanız istendiğinde kullanabilirsiniz."
+  Requires_Player: "Bu konuşmaya sadece oyuncular girebilir."
+  Error: "&cUps! Bu görüşmede bir sorun oluştu! Ayrıntılar için konsolu incelemek üzere lütfen yöneticiyle iletişime geçin."
+  Conversation_Cancelled: "Bekleyen sohbet yanıtınız iptal edildi."
+  Conversation_Cancelled_Inactive: "Bekleyen sohbet yanıtınız, etkin olmadığınız için iptal edildi."
+
+# -------------------------------------------------------------------------------------------------
+# Araçlarla ilgili mesajlar
+# -------------------------------------------------------------------------------------------------
+Tool:
+  Error: "&cUps! Bu araçla ilgili bir sorun oluştu! Ayrıntılar için konsolu incelemek üzere lütfen yöneticiyle iletişime geçin."
+
+# -------------------------------------------------------------------------------------------------
+# Hem tekil hem de çoğul form için kelimeler. Bu iki formu “, ” ile ayırın
+# -------------------------------------------------------------------------------------------------
+Cases:
+
+# -------------------------------------------------------------------------------------------------
+# Farklı önekleri {prefix_<type>} çağrısı yaparak kullanabilirsiniz, örneğin {prefix_info}
+# -------------------------------------------------------------------------------------------------
+Prefix:
+  Info: "&8&l[&9&li&8&l]&7"
+  Success: "&8&l[&2&l!&8&l]&7"
+  Warn: "&8&l[&6&l!&8&l]&6"
+  Error: "&8&l[&4&lX&8&l]&c"
+  Question: "&8&l[&a&l?&l&8]&7"
+  Announce: "&8&l[&5&l!&l&8]&d"
+
+# -------------------------------------------------------------------------------------------------
+# Çeşitli
+# -------------------------------------------------------------------------------------------------
+None: "None"
+Server_Prefix: "[Sunucu]"
+Console_Name: "Konsol"
+
+# -------------------------------------------------------------------------------------------------
+# Veritabanı ile ilgili mesajlar
+# -------------------------------------------------------------------------------------------------
+Data_Missing: "&c{name} veritabanı bilgilerinden yoksun! Lütfen sadece oyun içinde {type} oluşturun! Atlanıyor..."
+Data_Loading: "Veritabanı şu anda veri yüklüyor, lütfen bekleyin..."
+
+# -------------------------------------------------------------------------------------------------
+# Oyuncu izni olmayan bir komut çalıştırdığında gösterilen mesajlar
+# -------------------------------------------------------------------------------------------------
+No_Permission: "&cBu komutu kullanmak için {permission} yetkiniz olmalı!" 
+
+# -------------------------------------------------------------------------------------------------
+# Dahili sürüm numarası
+# -------------------------------------------------------------------------------------------------
+Version: 1
