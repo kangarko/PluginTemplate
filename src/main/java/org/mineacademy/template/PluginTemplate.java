@@ -19,6 +19,14 @@ public final class PluginTemplate extends SimplePlugin {
 	*/
 	@Override
 	protected void onPluginStart() {
+	}
+
+	/**
+	 * Automatically perform login when the plugin starts and each time it is reloaded.
+	 */
+	@Override
+	protected void onReloadablesStart() {
+
 		// You can check for necessary plugins and disable loading if they are missing
 		//Valid.checkBoolean(HookManager.isVaultLoaded(), "You need to install Vault so that we can work with packets, offline player data, prefixes and groups.");
 

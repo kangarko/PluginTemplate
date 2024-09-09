@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
+bx<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -28,21 +28,20 @@
 
         <!-- Change the Java version this plugin is built on.
 
-             IMPORTANT: For Java 8, version is "1.8", for Java 11+ it is "11" or "17".
+             IMPORTANT: For Java 8, version is "1.8", for Java 11+ it is only "11" or "17".
 
              If you use 1.8 then your plugin will work on newer versions, but if you
              use 17 then it will NOT load on servers with previous Java versions.
              -->
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <java.version>1.8</java.version>
 
         <!-- Change to the latest version from https://github.com/kangarko/Foundation/releases
              or change to "LATEST" if you downloaded Foundation to your disk and compiled it. -->
-        <foundation.version>LATEST</foundation.version>
+        <foundation.version>6.9.5</foundation.version>
 
         <!-- Leave on "com.github.kangarko" if you use Foundation from GitHub like most people,
              or change to "org.mineacademy" if you downloaded our library to your disk and compiled it. -->
-        <foundation.path>org.mineacademy</foundation.path>
+        <foundation.path>com.github.kangarko</foundation.path>
 
         <!-- DO NOT EDIT. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -53,6 +52,10 @@
         <repository>
             <id>jitpack</id>
             <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
     </repositories>
 
@@ -65,10 +68,10 @@
                  parent directory where you have "target" we will look for patched_1.8.8.jar file -->
         <!--<dependency>
             <groupId>paper-server</groupId>
-            <artifactId>Paper-1.21</artifactId>
+            <artifactId>Paper-1.21.1</artifactId>
             <version>1</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/library/patched_1.21.jar</systemPath>
+            <systemPath>${project.basedir}/library/patched_1.21.1.jar</systemPath>
         </dependency>-->
 
         <!-- No need to import Spigot/Paper API since Foundation includes latest Spigot API. If you need
@@ -77,7 +80,7 @@
         <!--<dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.21-R0.1-SNAPSHOT</version>
+            <version>1.21.1-R0.1-SNAPSHOT</version>
         </dependency>-->
 
         <!-- The Foundation library. It contains the latest Spigot API and a ton of useful dependencies
@@ -85,7 +88,7 @@
              your file will shade with all the dependencies resulting it crashes and huge file size. -->
         <dependency>
             <groupId>${foundation.path}</groupId>
-            <artifactId>foundation-bukkit</artifactId>
+            <artifactId>Foundation</artifactId>
             <version>${foundation.version}</version>
         </dependency>
     </dependencies>
@@ -109,6 +112,10 @@
                 <!-- Change version to the latest one from
                      https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
                 <version>3.13.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

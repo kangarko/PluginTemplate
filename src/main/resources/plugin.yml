@@ -12,7 +12,7 @@ author: ${author}
 # DO NOT EDIT. This api-version is used for maximum backward compatibility.
 api-version: 1.13
 # Plugins that we support so that we are loaded after them for your convenience.
-softdepend: [AuthMe, BanManager, CMI, DiscordSRV, Factions, Feudal, ItemsAdder, Essentials, LegacyFactions, Lands, LuckPerms, Multiverse-Core, MVdWPlaceholderAPI, MythicMobs, mcMMO, Nicky, PlaceholderAPI, ProtocolLib, SimpleClans, Towny, TownyChat, Vault, WorldEdit]
+softdepend: [AuthMe, BanManager, BungeeChatAPI, CMI, DiscordSRV, Factions, Feudal, ItemsAdder, Essentials, LegacyFactions, Lands, LuckPerms, Multiverse-Core, MVdWPlaceholderAPI, MythicMobs, mcMMO, Nicky, PlaceholderAPI, ProtocolLib, SimpleClans, Towny, TownyChat, Vault, WorldEdit]
 # The commands are built at runtime so you can change them easily within the settings.
 # Do not change anything in here, you will break the plugin and get no support.
 commands:  
