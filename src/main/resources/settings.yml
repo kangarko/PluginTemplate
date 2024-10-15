@@ -38,6 +38,10 @@ Example:
   # An example of a config key
   Sample_Flag: true
 
+# !
+# The keys from the section belows are used in our library in the SimpleSettings class automatically
+# !
+
 # -------------------------------------------------------------------------------------------------
 # What commands should trigger the main plugin command group?
 #
@@ -66,6 +70,18 @@ Prefix: "&8[&c${project.name}&8]&7"
 # Set to -1 to disable.
 # -------------------------------------------------------------------------------------------------
 Log_Lag_Over_Milis: 100
+
+# -------------------------------------------------------------------------------------------------
+# Should we notify you about new versions of the plugin to players with pluginName.update.notify
+# permission and the console on startup?
+# -------------------------------------------------------------------------------------------------
+#Notify_New_Versions: true # requires you to override getBuiltByBitX methods in main plugin's class
+
+# -------------------------------------------------------------------------------------------------
+# Send anonymized error reports to sentry.io? This helps us fix bugs without you needing to
+# report them manually.
+# -------------------------------------------------------------------------------------------------
+#Sentry: true # override getSentryDsn() in main plugin's class
 
 # -------------------------------------------------------------------------------------------------
 # List of section names that will print informative messages about this plugin's features.
