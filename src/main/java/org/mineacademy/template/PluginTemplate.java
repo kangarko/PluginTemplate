@@ -3,7 +3,7 @@ package org.mineacademy.template;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
-import org.mineacademy.fo.platform.SimplePlugin;
+import org.mineacademy.fo.platform.BukkitPlugin;
 
 /**
  * PluginTemplate is a simple template you can use every time you make
@@ -12,7 +12,7 @@ import org.mineacademy.fo.platform.SimplePlugin;
  *
  * It uses Foundation for fast and efficient development process.
  */
-public final class PluginTemplate extends SimplePlugin {
+public final class PluginTemplate extends BukkitPlugin {
 
 	/**
 	* Automatically perform login ONCE when the plugin starts.
@@ -60,12 +60,12 @@ public final class PluginTemplate extends SimplePlugin {
 
 	/**
 	 * Return the instance of this plugin, which simply refers to a static
-	 * field already created for you in SimplePlugin but casts it to your
+	 * field already created for you in {@link BukkitPlugin} but casts it to your
 	 * specific plugin instance for your convenience.
 	 *
 	 * @return
 	 */
 	public static PluginTemplate getInstance() {
-		return (PluginTemplate) SimplePlugin.getInstance();
+		return (PluginTemplate) BukkitPlugin.getInstance();
 	}
 }

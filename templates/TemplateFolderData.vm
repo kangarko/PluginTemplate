@@ -164,8 +164,7 @@ public final class ${NAME} extends YamlConfig {
     }
  
     /*
-        Don't forget to call this method in class
-        extending SimplePlugin -> onReloadablesStart method
+        Don't forget to call this method in your main plugin's class' onPluginStart()
      */
     public static void loadData() {
         loadedData.loadItems();
