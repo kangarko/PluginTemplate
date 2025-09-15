@@ -134,7 +134,8 @@
                         <includes>
                             <!-- Important: This will ensure only Foundation is shaded to your jar. If you have
                                  other dependencies that should be compiled, duplicate this line for each. -->
-                            <include>${foundation.path}:Foundation*</include>
+                            <include>${foundation.path}:foundation-bukkit*</include>
+                            <include>${foundation.path}:foundation-core*</include>
                         </includes>
                     </artifactSet>
                     <relocations>
