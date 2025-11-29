@@ -72,7 +72,7 @@
         </dependency>-->
 
         <!-- No need to import Spigot/Paper API since Foundation includes latest Spigot API. If you need
-            to code for another version or want to use Paper API, place it here (above Foundation) as per 
+            to code for another version or want to use Paper API, place it here (above Foundation) as per
             https://github.com/PaperMC/Paper?tab=readme-ov-file#maven -->
         <!--<dependency>
             <groupId>io.papermc.paper</groupId>
@@ -100,7 +100,7 @@
 
                 <!-- Change version to the latest one from
                      https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
-                <version>3.4.2</version>
+                <version>3.5.0</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -108,15 +108,15 @@
 
                 <!-- Change version to the latest one from
                      https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-                <version>3.14.0</version>
+                <version>3.14.1</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
 
                 <!-- Change version to the latest one from
-                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin 
-					 
+                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin
+
 					 NOTICE: If using Jitpack and experiencing build failure, try downgrading to 3.5.1.
 					 -->
                 <version>3.6.1</version>
