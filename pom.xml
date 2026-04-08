@@ -77,7 +77,7 @@
         <!--<dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.21.4-R0.1-SNAPSHOT</version>
+            <version>[26.1.1.build,)</version>
         </dependency>-->
 
         <!-- The Foundation library. It contains the latest Spigot API and a ton of useful dependencies
@@ -108,13 +108,13 @@
 
                 <!-- Change version to the latest one from
                      https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-                <version>3.14.1</version>
+                <version>3.15.0</version>
                 <configuration>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <version>1.18.42</version>
+                            <version>1.18.44</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
@@ -128,7 +128,7 @@
 
 					 NOTICE: If using Jitpack and experiencing build failure, try downgrading to 3.5.1.
 					 -->
-                <version>3.6.1</version>
+                <version>3.6.2</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
