@@ -5,29 +5,6 @@
 #    This is the main plugin's settings class. You can use SimpleSettings to load values from it,
 #    and update it automatically.
 #
-#    For support and documentation, please visit:
-#    - https://github.com/${author}/${project.name}/wiki
-#
-# !-----------------------------------------------------------------------------------------------!
-#
-#    1) COLOR CODES are supported with the '&' character.
-#       - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
-#       - When you use them, place quotes around the message like this: "Hello &cworld."
-#       - To use HEX colors, use the MiniMessage <#123456> syntax: "Hello <#123456>world."
-#
-#    2) TO HIDE any message, set it to 'none'.
-#
-#    3) For UNICODE CHARACTERS (smileys, symbols, ..), save the file in UTF-8 encoding. See
-#       - https://github.com/${author}/${project.name}/wiki/Use-Right-Encoding
-#
-#    4) JSON is supported.
-#       - For usage, see https://github.com/${author}/${project.name}/wiki/JSON
-#
-#    5) WHITELISTS can be turned into blacklists, by putting "@blacklist" on the first line.
-#       - Doing such, filters will only apply for messages in those lists.
-#
-#    PS: Everything above applies for all files in ${project.name}/ folder.
-#
 # !-----------------------------------------------------------------------------------------------!
 
 # -------------------------------------------------------------------------------------------------
