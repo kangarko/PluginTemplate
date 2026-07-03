@@ -24,7 +24,7 @@
         <author>kangarko</author>
 
         <!-- Change to the full path where your main plugin class is located. -->
-        <main.class>org.mineacademy.template.PluginTemplate</main.class>
+        <main.class>org.mineacademy.plugintemplate.PluginTemplate</main.class>
 
         <!-- Java 21 is the minimum. Plugins shaded with Foundation will not load
              on older JVMs because Foundation is also compiled for 21. -->
@@ -32,11 +32,11 @@
 
         <!-- Change to the latest version from https://github.com/kangarko/Foundation/releases
              or change to "LATEST" if you downloaded Foundation to your disk and compiled it. -->
-        <foundation.version>LATEST</foundation.version>
+        <foundation.version>7.0.0</foundation.version>
 
-        <!-- Leave on "com.github.kangarko" if you use Foundation from GitHub like most people,
+        <!-- Leave on "com.github.kangarko.foundation" if you use Foundation from GitHub like most people,
              or change to "org.mineacademy" if you downloaded our library to your disk and compiled it. -->
-        <foundation.path>org.mineacademy</foundation.path>
+        <foundation.path>com.github.kangarko.foundation</foundation.path>
 
         <!-- DO NOT EDIT. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -138,7 +138,6 @@
                             <!-- Important: This will ensure only Foundation is shaded to your jar. If you have
                                  other dependencies that should be compiled, duplicate this line for each. -->
                             <include>${foundation.path}:foundation-bukkit*</include>
-                            <include>${foundation.path}:foundation-core*</include>
                         </includes>
                     </artifactSet>
                     <relocations>
