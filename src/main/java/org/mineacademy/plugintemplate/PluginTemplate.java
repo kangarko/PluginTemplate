@@ -1,4 +1,4 @@
-package org.mineacademy.template;
+package org.mineacademy.plugintemplate;
 
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
