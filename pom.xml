@@ -59,10 +59,10 @@
                  parent directory where you have "target" we will look for patched_1.8.8.jar file -->
         <!--<dependency>
             <groupId>paper-server</groupId>
-            <artifactId>Paper-1.21</artifactId>
+            <artifactId>Paper-26.2</artifactId>
             <version>1</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/library/patched_1.21.jar</systemPath>
+            <systemPath>${project.basedir}/library/patched_26.2.jar</systemPath>
         </dependency>-->
 
         <!-- No need to import Spigot/Paper API since Foundation includes latest Spigot API. If you need
@@ -71,7 +71,7 @@
         <!--<dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>[26.1.2.build,)</version>
+            <version>[26.2.build,)</version>
         </dependency>-->
 
         <!-- The Foundation library. It contains the latest Spigot API and a ton of useful dependencies
