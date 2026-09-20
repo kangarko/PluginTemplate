@@ -32,7 +32,7 @@
 
         <!-- Change to the latest version from https://github.com/kangarko/Foundation/releases
              or change to "LATEST" if you downloaded Foundation to your disk and compiled it. -->
-        <foundation.version>7.0.0</foundation.version>
+        <foundation.version>7.0.3</foundation.version>
 
         <!-- Leave on "com.github.kangarko.foundation" if you use Foundation from GitHub like most people,
              or change to "org.mineacademy" if you downloaded our library to your disk and compiled it. -->
