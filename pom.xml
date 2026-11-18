@@ -33,7 +33,7 @@
              If you use 1.8 then your plugin will work on newer versions, but if you
              use 17 then it will NOT load on servers with previous Java versions.
              -->
-        <java.version>1.8</java.version>
+        <java.version>21</java.version>
 
         <!-- Change to the latest version from https://github.com/kangarko/Foundation/releases
              or change to "LATEST" if you downloaded Foundation to your disk and compiled it. -->
@@ -114,8 +114,7 @@
                      https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
                 <version>3.16.0</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <release>${java.version}</release>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
